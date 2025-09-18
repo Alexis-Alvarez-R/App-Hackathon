@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import type { Ave } from "../interface/Ave";
+import { EstadoAve } from "./EstadoAve";
 
 interface Props {
   ave: Ave;
@@ -23,7 +24,7 @@ export const AvesCard = ({ ave }: Props) => {
       <div className="flex justify-between items-center gap-3 w-full">
         <p className="border-2 border-black p-2 rounded-2xl bg-gray-200 ">
           {" "}
-          <span className="font-bold">Estado: </span> {ave.estados_conservacion.nombre}
+          <span className="font-bold">Estado: </span> <EstadoAve estado={ave.estados_conservacion.nombre}></EstadoAve>
         </p>
 
         <Link to={"/Aves Detalles"} state={ave} className="border-2 border-black p-2 rounded-2xl bg-gray-200 font-bold">

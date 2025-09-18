@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import type { Ave } from "../interface/Ave";
+import { EstadoAve } from "./EstadoAve";
 
 export const AvesDetalles = () => {
   const location = useLocation();
@@ -30,8 +31,10 @@ export const AvesDetalles = () => {
               <p className="text-3xl">{ave.dieta}</p>
               <p className="font-bold">Dieta</p>
             </div>
-            <div className="flex flex-col border-3 border-black p-3">
-              <p className="text-3xl">{ave.estados_conservacion.nombre}</p>
+            <div className="flex flex-col gap-2 border-3 border-black p-3 ">
+              <p className="text-3xl">
+                <EstadoAve estado={ave.estados_conservacion.nombre}></EstadoAve>
+              </p>
               <p className="font-bold">Estado de conservacion</p>
             </div>
           </div>
