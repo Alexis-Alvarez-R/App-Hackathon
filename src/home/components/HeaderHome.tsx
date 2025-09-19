@@ -3,6 +3,8 @@ import { obtenerAve } from "../../aviturismo-page/service/obtener-aves";
 import { NavLinks } from "./NavLinks";
 import { useSesionContex } from "../../Context/AuthContex";
 
+import { MenuDesplegable } from "./MenuDesplegable";
+
 const links = ["Inicio", "Aviturismo", "Explora", "Juegos", "Contacto"];
 
 export const HeaderHome = () => {
@@ -15,9 +17,10 @@ export const HeaderHome = () => {
   return (
     <header className="w-full flex justify-end gap-4 border-2 border-white bg-black text-white p-3 mb-4">
       <p className="border-4 border-white px-4 py-2 ml-auto">LOGO</p>
-      <nav className="flex justify-center items-center gap-4 border-2 border-white   px-5 py-2 w-[40%] ml-auto">
+      <nav className="hidden desktop:flex justify-center items-center gap-4 border-2 border-white   px-5 py-2 w-[40%] ">
         <NavLinks links={links}></NavLinks>
       </nav>
+      <MenuDesplegable links={links}></MenuDesplegable>
 
       {sesion ? (
         <Link
