@@ -1,8 +1,11 @@
 import Router from "./Router/Router";
+import { SesionProvider } from "./Context/AuthContex";
 export const App = () => {
   return (
     <>
-      <Router />
+      <SesionProvider>
+        <Router />
+      </SesionProvider>
     </>
   );
 };

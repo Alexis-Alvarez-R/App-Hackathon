@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import type { typeActionQuery } from "../Auth/Auth";
+import { useNavigate } from "react-router-dom";
+import { useSesionContex } from "../Context/AuthContex";
 
 declare global {
   interface Window {
@@ -9,35 +11,71 @@ declare global {
 
 type props = {
   accionquery: typeActionQuery;
+  onSuccess?: (credential: string) => void;
 };
 
 export default function ButtonGoogle({ accionquery }: props) {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://accounts.google.com/gsi/client";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    console.log(accionquery);
-  }, []);
-  return (
-    <>
-      <div
-        id="g_id_onload"
-        data-client_id="604063939668-kju71nqdf99fn8lg581prs6j9ba50l8s.apps.googleusercontent.com"
-        data-context="signin"
-        data-ux-mode="redirect"
-        data-login_uri={`http://localhost:3000/auth/google/callback?accion=${accionquery}`}
-        data-auto_prompt="false"
-      ></div>
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const { setSesion } = useSesionContex();
+  const nav = useNavigate();
 
-      <div
-        className="g_id_signin"
-        data-type="standard"
-        data-shape="pill"
-        data-size="large"
-        data-text="continue_with"
-      ></div>
-    </>
-  );
+  useEffect(() => {
+    const renderButton = () => {
+      if (window.google && buttonRef.current) {
+        window.google.accounts.id.initialize({
+          client_id:
+            "604063939668-kju71nqdf99fn8lg581prs6j9ba50l8s.apps.googleusercontent.com",
+          callback: async (response: any) => {
+            try {
+              const res = await fetch(
+                `http://localhost:3000/auth/google/callback?accion=${accionquery}`,
+                {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ credential: response.credential }),
+                  credentials: "include",
+                }
+              );
+
+              if (res.ok) {
+                console.log("Login exitoso");
+                const data = await res.json();
+                console.log(data);
+                setSesion(data);
+                nav("/Inicio", { replace: true });
+              } else {
+                setSesion(undefined);
+                console.error("Token inválido o error en backend");
+              }
+            } catch (error) {
+              setSesion(undefined);
+            }
+          },
+        });
+
+        window.google.accounts.id.renderButton(buttonRef.current, {
+          theme: "outline",
+          size: "large",
+          type: "standard",
+          text: "continue_with",
+        });
+      }
+    };
+
+    const scriptExists = document.getElementById("google-client-script");
+
+    if (!scriptExists) {
+      const script = document.createElement("script");
+      script.id = "google-client-script";
+      script.src = "https://accounts.google.com/gsi/client";
+      script.async = true;
+      script.defer = true;
+      script.onload = renderButton;
+      document.body.appendChild(script);
+    } else {
+      renderButton();
+    }
+  }, [accionquery, nav]);
+
+  return <div ref={buttonRef}></div>;
 }
