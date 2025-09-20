@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { useSesionContex } from "../../Context/AuthContex";
+
 import menuLogo from "../../assets/icons/menu-icon.svg";
 import { NavLinks } from "./NavLinks";
 
@@ -10,6 +12,7 @@ interface Props {
 
 export const MenuDesplegable = ({ links }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { sesion } = useSesionContex();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -28,13 +31,22 @@ export const MenuDesplegable = ({ links }: Props) => {
         }`}
       >
         <NavLinks links={links} />
-        <Link
-          to="/Inicio sesion"
-          onClick={closeMenu}
-          className="mt-3 w-full bg-green-800 text-center text-white py-2 rounded-full hover:bg-green-700 active:scale-95 transition-transform"
-        >
-          Inicie sesión
-        </Link>
+
+        {sesion ? (
+          <Link
+            to={"/Perfil"}
+            className="mr-10 bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform "
+          >
+            perfil
+          </Link>
+        ) : (
+          <Link
+            to={"/Inicio sesion"}
+            className="mr-10 bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform "
+          >
+            Inicie sesion
+          </Link>
+        )}
       </div>
     </div>
   );

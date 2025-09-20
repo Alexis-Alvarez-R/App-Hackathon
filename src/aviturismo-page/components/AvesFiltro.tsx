@@ -11,11 +11,11 @@ interface Props {
 
 export const AvesFiltro = ({ filtros, onFiltroClick }: Props) => {
   return (
-    <div className="flex  flex-wrap justify-center gap-3.5 p-4 border-2 border-amber-300 w-screen mb-3">
+    <div className="flex  flex-wrap justify-center gap-3.5 p-4  w-screen mb-3 bg-darkGreen">
       {filtros.map((filtro) => (
         <button
           key={filtro.id}
-          className="border-2 border-black p-2 rounded-2xl active:scale-97 transition-transform"
+          className=" font-nunito font-bold  py-2 px-3 bg-beige rounded-2xl active:scale-97 transition-transform cursor-pointer"
           onClick={() => onFiltroClick(filtro.id)}
         >
           {filtro.nombre}

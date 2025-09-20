@@ -4,4 +4,20 @@
   --breakpoint-mobile: 640px;
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1080px;
+
+  --color-darkGreen: #2e7d32;
+  --color-lightGreen: #81c784;
+  --color-skyBlue: #4fc3f7;
+  --color-beige: #f5e6ca;
+
+  --font-nunito: "Nunito";
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/src/assets/fonts/Nunito-Regular.woff2") format("woff2"),
+    url("/src/assets/fonts/Nunito-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

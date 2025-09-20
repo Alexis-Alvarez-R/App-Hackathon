@@ -14,5 +14,5 @@ const estadoColors: Record<string, string> = {
 export const EstadoAve = ({ estado, className = "" }: Props) => {
   const estadoClass = estadoColors[estado] ?? "bg-gray-200 text-black";
 
-  return <span className={` rounded-2xl p-1 ${estadoClass} ${className}`}>{estado}</span>;
+  return <span className={` rounded-2xl p-2  ${estadoClass} ${className}`}>{estado}</span>;
 };
