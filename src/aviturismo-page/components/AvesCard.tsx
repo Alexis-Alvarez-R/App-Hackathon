@@ -12,7 +12,7 @@ export const AvesCard = ({ ave }: Props) => {
     <div className=" bg-lightGreen  flex flex-col gap-5 rounded-2xl p-2">
       <div className="flex justify-center items-center w-full h-[250px] ">
         <img
-          className="w-full h-full object-cover object-top-left rounded-2xl"
+          className="w-full h-full object-cover object-top-left rounded-2xl hover:scale-105 transition-transform duration-500 ease-in-out "
           src={ave.url_img}
           alt={ave.nombre_comun}
         />
@@ -22,15 +22,15 @@ export const AvesCard = ({ ave }: Props) => {
       </h2>
 
       <div className="flex justify-between items-center gap-3 w-full">
-        <p className=" px-2 py-3 rounded-2xl bg-beige font-nunito font-bold w-[70%]">
+        <p className="  px-2 py-3 rounded-2xl bg-beige font-nunito font-bold w-[80%] desktop:w-[70%]">
           {" "}
-          <span className="font-bold">Estado: </span> <EstadoAve estado={ave.estados_conservacion.nombre}></EstadoAve>
+          Estado: <EstadoAve estado={ave.estados_conservacion.nombre}></EstadoAve>
         </p>
 
         <Link
           to={"/Aves Detalles"}
           state={ave}
-          className=" px-2 py-3  rounded-2xl bg-darkGreen font-nunito font-bold w-[30%] text-center text-beige hover:bg-beige hover:text-darkGreen transition-colors"
+          className=" px-2 py-3  rounded-2xl bg-darkGreen font-nunito font-bold w-[20%] desktop:w-[30%] text-center text-beige hover:bg-beige hover:text-darkGreen transition-colors"
         >
           +INFO
         </Link>
