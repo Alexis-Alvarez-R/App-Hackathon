@@ -15,7 +15,7 @@ export const AvesFiltro = ({ filtros, onFiltroClick }: Props) => {
       {filtros.map((filtro) => (
         <button
           key={filtro.id}
-          className=" font-nunito font-bold  py-2 px-3 bg-beige rounded-2xl active:scale-97 transition-transform cursor-pointer"
+          className=" font-nunito font-bold  py-2 px-3 text-black bg-beige rounded-2xl active:scale-97 transition-transform cursor-pointer"
           onClick={() => onFiltroClick(filtro.id)}
         >
           {filtro.nombre}
