@@ -25,3 +25,15 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* global.css o tu archivo de estilos */
+.leaflet-popup-content-wrapper {
+  border: solid black 1px;
+  background-color: #4b4a4a8e !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(3px);
+}
+
+.leaflet-popup-tip {
+  background: #f0f9ff;
+}

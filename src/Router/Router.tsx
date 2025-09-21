@@ -9,6 +9,7 @@ import Juegos from "../Juegos/Components/Juegos";
 import Perfil from "../Perfil/Components/Perfil";
 import PrivateRouter from "./privateRouter";
 import { FooterHome } from "../home/components/FooterHome";
+import DetalleLugar from "../home/components/DetalleLugar";
 
 export default function Router() {
   return (
@@ -23,7 +24,9 @@ export default function Router() {
           <Route path="/Juegos" element={<Juegos />}></Route>
         </Route>
         <Route path="/Aves Detalles" element={<AvesDetalles />} />
-        <Route index element={<Navigate to="/Inicio"></Navigate>}></Route> <Route path="/Perfil" element={<Perfil />} />
+        <Route path="/Detallelugar/:lugar" element={<DetalleLugar />} />
+        <Route index element={<Navigate to="/Inicio"></Navigate>}></Route>{" "}
+        <Route path="/Perfil" element={<Perfil />} />
         //fixed el not found
         <Route path="*" element={<h1>Not Found 404</h1>} />
       </Routes>

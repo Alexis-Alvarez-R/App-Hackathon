@@ -1,11 +1,11 @@
 import { MainHome } from "./MainHome";
-import MapView from "./MapView";
+import Map from "./Map";
 
 export default function Home() {
   return (
     <>
-      <MainHome />
-      <MapView />
+      {/* <MainHome /> */}
+      <Map />
     </>
   );
 }

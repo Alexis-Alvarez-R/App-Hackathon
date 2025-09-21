@@ -1,15 +1,21 @@
+import { Map } from "leaflet";
 import { MapContainer, TileLayer } from "react-leaflet";
 import useLugares from "../hooks/useLugares";
 import LugarMarker from "./LugarMaker";
 
 export default function MapView() {
   const lugares = useLugares();
+
+  function centerMarker(position: { lat: number; lng: number }, fnMap: Map) {
+    fnMap.flyTo({ lat: position.lat, lng: position.lng });
+  }
+
   return (
-    <div className="box-border h-[90vh] p-7 relative ">
+    <div className=" box-border h-[80vh] w-full relative">
       <MapContainer
         center={[12.705148770875159, -85.43151602843885]}
         zoom={6.7}
-        className="absolute w-[90%] h-[80%] left-[50%] [transform:translateX(-50%)] rounded-2xl"
+        className="absolute w-[85%] h-[90%] left-[50%] top-[50%] [transform:translate(-50%,_-50%)] rounded-2xl desktop:w-[80%] desktop:h-[95%]"
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -31,7 +37,13 @@ export default function MapView() {
         {/* Marcador */}
         {lugares
           ? lugares.map((lugar) => {
-              return <LugarMarker key={lugar.id} lugar={lugar} />;
+              return (
+                <LugarMarker
+                  key={lugar.id}
+                  lugar={lugar}
+                  MarkerProp={{ selectMarker: centerMarker }}
+                />
+              );
             })
           : null}
       </MapContainer>

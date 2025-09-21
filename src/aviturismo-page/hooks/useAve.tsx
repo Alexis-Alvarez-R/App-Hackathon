@@ -7,7 +7,6 @@ export const useAve = () => {
 
   const obtenerAves = async () => {
     const listAves = await obtenerAve();
-
     setAves(listAves);
   };
 

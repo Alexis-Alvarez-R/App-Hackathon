@@ -1,25 +1,35 @@
 import { Popup } from "react-leaflet";
+import { useNavigate } from "react-router-dom";
+import { type Lugar } from "../interfaces/Lugar";
 
-interface prop {
-  nombre: string;
-  img: string;
-  descripcion: string;
-  descripcion_detalle: string;
+interface propLugar {
+  lugar: Lugar;
 }
 
-export default function LugarPopup({
-  nombre,
-  img,
-  descripcion,
-  descripcion_detalle,
-}: prop) {
+export default function LugarPopup({ lugar }: propLugar) {
+  const navigate = useNavigate();
+  const { nombre, img } = lugar;
+
+  function irDetalles() {
+    navigate(`/Detallelugar/${nombre}`, { state: { lugar } });
+  }
   return (
-    <Popup className="w-[300px]">
-      <h1 className="text-2xl font-semibold">{nombre}</h1>
+    <Popup className="w-[240px] h-[140px] m-h-[140px]">
+      <h1 className="text-center pt-1.5 pb-1.5 text-[20px] font-bold text-[#f7f7f7]">
+        {nombre}
+      </h1>
       <div className="[border-radius:12px] overflow-hidden">
-        <img src={img} alt="" />
+        <img className="h-[170px] w-full object-cover" src={img} alt="" />
       </div>
-      <p>{descripcion.split(" ").slice(0, 20).join(" ")}</p>
+      {/* <p className="text-white text-[18px]">
+        {descripcion.split(" ").slice(0, 12).join(" ").concat(" ...")}
+      </p> */}
+      <button
+        onClick={irDetalles}
+        className="bg-green-300 p-2.5 mt-4 w-full rounded-2xl font-semibold cursor-pointer hover:bg-green-400 hover:text-white transition-all duration-200 ease-initial"
+      >
+        Ver mas
+      </button>
     </Popup>
   );
 }
