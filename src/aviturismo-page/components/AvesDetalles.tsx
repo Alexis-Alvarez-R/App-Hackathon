@@ -7,7 +7,7 @@ export const AvesDetalles = () => {
   const ave = location.state as Ave;
   return (
     <div>
-      <div className=" flex-col-reverse w-screen desktop:flex-row flex justify-around items-center bg-beige">
+      <section className=" flex-col-reverse w-screen desktop:flex-row flex justify-around items-center bg-beige">
         <div className="  w-full desktop:w-[65%]  flex flex-col gap-5 p-3 bg-beige ">
           <h1 className="  text-xl font-nunito font-bold desktop:text-3xl  text-darkGreen  p-2">
             <span className="text-black">Nombre Comun: </span>
@@ -43,20 +43,20 @@ export const AvesDetalles = () => {
         <div className=" w-full flex justify-center items-center desktop:w-[35%] hover:scale-105 transition-transform duration-500 ease-in-out  ">
           <img className="w-full  object-contain " src={ave.url_img} alt={ave.nombre_comun} />
         </div>
-      </div>
+      </section>
 
-      <div className="flex flex-col desktop:flex-row justify-between items-center gap-5 w-screen bg-lightGreen p-4 mb-5 ">
+      <section className="flex flex-col desktop:flex-row justify-between items-center gap-5 w-screen bg-lightGreen p-4 mb-5 ">
         <p className=" w-full desktop:w-[20%] font-nunito font-bold text-3xl p-2  bg-beige rounded-2xl  hover:bg-darkGreen hover:text-beige transition-colors">
           Descripcion:
         </p>
         <p className=" w-full desktop:w-[80%] font-nunito font-bold p-2  bg-beige rounded-2xl  hover:bg-darkGreen hover:text-beige transition-colors">
           {ave.descripcion}
         </p>
-      </div>
+      </section>
 
-      <div className="w-screen border-4 border-green-700 ">
+      <section className="w-screen border-4 border-green-700 ">
         <h1 className="w-full p-3 text-center">MAPA DE DISTRIBUCION</h1>
-      </div>
+      </section>
     </div>
   );
 };

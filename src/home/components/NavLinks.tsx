@@ -4,18 +4,25 @@ interface Props {
   links: string[];
 }
 export const NavLinks = ({ links }: Props) => {
+  const handleScrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth", // Esto hace que el desplazamiento sea suave
+    });
+  };
+
   return (
     <>
       {links.map((link, index) => {
         if (link === "Contacto") {
           return (
-            <a
+            <button
               key={index}
-              href="#footer"
-              className="w-full hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito"
+              className="w-full hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito  text-start"
+              onClick={handleScrollToBottom}
             >
               {link}
-            </a>
+            </button>
           );
         } else {
           return (

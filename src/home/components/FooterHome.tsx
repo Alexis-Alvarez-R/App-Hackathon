@@ -10,6 +10,13 @@ import { NavLinks } from "./NavLinks";
 const links = ["Inicio", "Aviturismo", "Explora", "Juegos", "Contacto"];
 
 export const FooterHome = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Esto hace que el desplazamiento sea suave
+    });
+  };
+
   return (
     <>
       <footer id="footer" className="w-screen flex-col  bg-black flex desktop:flex-row gap-4 p-2 text-white ">
@@ -58,26 +65,26 @@ export const FooterHome = () => {
             </Link>
           </div>
 
-          <a
-            href="#header"
+          <button
+            onClick={handleScrollToTop}
             className="outline-3 outline-darkGreen w-[50%] desktop:w-[40%] py-3 flex justify-center items-center gap-2 font-nunito font-bold rounded-2xl hover:bg-darkGreen active:scale-95  transition-all ease-in-out duration-300"
           >
             {" "}
             <img className="inline fill-white" src={arrowUp} alt="" />
             BACK TO TOP
-          </a>
+          </button>
         </section>
 
         <section className="flex flex-col gap-3 w-full desktop:w-[25%] mt-4 ml-4">
-          <h1 className="text-lightGreen text-2xl font-nunito font-bold ">Site Map</h1>
+          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">Site Map</h2>
           <NavLinks links={links}></NavLinks>
         </section>
 
         <section className="flex flex-col gap-4 w-full desktop:w-[25%] mt-4 ml-4 mb-4">
-          <h1 className="text-lightGreen text-2xl font-nunito font-bold">Legal</h1>
-          <h2 className="font-nunito">Privacy Policy</h2>
-          <h2 className="font-nunito">Terms of Services</h2>
-          <h2 className="font-nunito">Lawyer's Corners</h2>
+          <h2 className="text-lightGreen text-2xl font-nunito font-bold">Legal</h2>
+          <h3 className="font-nunito">Privacy Policy</h3>
+          <h3 className="font-nunito">Terms of Services</h3>
+          <h3 className="font-nunito">Lawyer's Corners</h3>
         </section>
       </footer>
       <div className=" w-screen h-[10px] bg-darkGreen"></div>

@@ -28,7 +28,7 @@ export const AvesCard = ({ ave }: Props) => {
         </p>
 
         <Link
-          to={"/Aves Detalles"}
+          to={"/Aves-Detalles"}
           state={ave}
           className=" px-2 py-3  rounded-2xl bg-darkGreen font-nunito font-bold w-[20%] desktop:w-[30%] text-center text-beige hover:bg-beige hover:text-darkGreen transition-colors"
         >
