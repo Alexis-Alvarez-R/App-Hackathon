@@ -11,6 +11,7 @@ import PrivateRouter from "./components/privateRouter";
 import { FooterHome } from "../home/components/FooterHome";
 import DetalleLugar from "../home/components/DetalleLugar";
 import { NotFound } from "./components/NotFound";
+import { PalabrasGame } from "../Juegos/Components/PalabrasGame";
 
 export default function Router() {
   return (
@@ -22,7 +23,9 @@ export default function Router() {
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Aviturismo" element={<AviturismoPage />} />
         <Route element={<PrivateRouter />}>
-          <Route path="/Juegos" element={<Juegos />}></Route>
+          <Route path="/Juegos" element={<Juegos />}>
+            <Route path="ScrambleWords" element={<PalabrasGame></PalabrasGame>}></Route>
+          </Route>
         </Route>
         <Route path="/Aves-Detalles" element={<AvesDetalles />} />
         <Route path="/Detallelugar/:lugar" element={<DetalleLugar />} />

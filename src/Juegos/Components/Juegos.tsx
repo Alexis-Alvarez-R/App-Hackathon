@@ -1,3 +1,10 @@
+import { Link, Outlet } from "react-router-dom";
+
 export default function Juegos() {
-  return <h1>Page de Juegos</h1>;
+  return (
+    <>
+      <Link to={"ScrambleWords"}>VE a JUGAR</Link>
+      <Outlet></Outlet>
+    </>
+  );
 }
