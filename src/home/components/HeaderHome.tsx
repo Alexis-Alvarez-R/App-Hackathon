@@ -31,7 +31,7 @@ export const HeaderHome = () => {
         </Link>
       ) : (
         <Link
-          to={"/Inicio sesion"}
+          to={"/Inicio-sesion"}
           className=" hidden desktop:block mr-10 bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform "
         >
           Inicie sesion

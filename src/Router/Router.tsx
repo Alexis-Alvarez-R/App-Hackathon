@@ -7,10 +7,10 @@ import { AviturismoPage } from "../aviturismo-page/components/AviturismoPage";
 import { AvesDetalles } from "../aviturismo-page/components/AvesDetalles";
 import Juegos from "../Juegos/Components/Juegos";
 import Perfil from "../Perfil/Components/Perfil";
-import PrivateRouter from "./privateRouter";
+import PrivateRouter from "./components/privateRouter";
 import { FooterHome } from "../home/components/FooterHome";
 import DetalleLugar from "../home/components/DetalleLugar";
-import { NotFound } from "./NotFound";
+import { NotFound } from "./components/NotFound";
 
 export default function Router() {
   return (

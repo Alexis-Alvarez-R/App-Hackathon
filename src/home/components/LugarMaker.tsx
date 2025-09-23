@@ -3,7 +3,7 @@ import { Marker, useMap } from "react-leaflet";
 import { type Lugar } from "../interfaces/Lugar";
 import LugarPopup from "./LugarPopup";
 import { type MarkerHouseProp } from "../interfaces/MarkerHouse.types";
-import tipoMarker from "./tipoMarker";
+import tipoMarker from "../utils/tipoMarker";
 import markerShadow from "../../assets/icons/marker-shadow.png";
 
 interface prop {
@@ -26,11 +26,7 @@ export default function LugarMarker({ lugar, MarkerProp }: prop) {
   const fnMap = useMap();
 
   return (
-    <Marker
-      position={[lat, lng]}
-      eventHandlers={{ click: () => selectMarker({ lat, lng }, fnMap) }}
-      icon={redIcon}
-    >
+    <Marker position={[lat, lng]} eventHandlers={{ click: () => selectMarker({ lat, lng }, fnMap) }} icon={redIcon}>
       <LugarPopup lugar={lugar} />
     </Marker>
   );

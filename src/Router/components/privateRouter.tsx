@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useSesionContex } from "../Context/AuthContex";
+import { useSesionContex } from "../../Context/AuthContex";
 
 function nav() {
   return <Navigate to={"/Inicio sesion"} replace />;
