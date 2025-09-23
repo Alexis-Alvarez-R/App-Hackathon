@@ -71,10 +71,10 @@ export const PalabrasGame = () => {
       <div className="w-full max-w-md mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-darkGreen to-lightGreen bg-clip-text text-transparent mb-2">
+          <h1 className="text-4xl font-bold font-nunito bg-gradient-to-r from-darkGreen to-lightGreen bg-clip-text text-transparent mb-2">
             Palabras desordenadas
           </h1>
-          <p className="text-gray-600">Desordena las letras para encontrar la palabra!</p>
+          <p className="text-gray-600 font-nunito font-bold">Ordena las letras para encontrar la palabra!</p>
         </div>
 
         {/* Main Game Card */}
@@ -107,7 +107,10 @@ export const PalabrasGame = () => {
             <form className="mb-6" onSubmit={handleGuessSubmit}>
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="guess" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="guess"
+                    className="block text-sm  text-gray-700 mb-2 text-center font-nunito font-bold"
+                  >
                     Adivina la palabra
                   </label>
                   <input
@@ -121,7 +124,7 @@ export const PalabrasGame = () => {
                       });
                     }}
                     placeholder="Ingresa tu palabra..."
-                    className=" w-full text-center text-lg font-semibold font-nunito h-12 border-3 border-indigo-200   focus:border-red-200  active:border-red-200 transition-colors"
+                    className=" w-full text-center text-lg font-semibold font-nunito h-12 focus:outline-3 focus:outline-darkGreen  transition-colors"
                     maxLength={palabraDesordenada.length}
                     disabled={isGameOver}
                   />
@@ -156,7 +159,7 @@ export const PalabrasGame = () => {
             <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={handleSkip}
-                className="border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                className="outline-2 outline-gray-300 hover:outline-gray-400 hover:bg-gris hover:text-white transition-colors flex items-center justify-center "
                 disabled={isGameOver || contadorSkips >= skipsMax}
               >
                 <div className="w-4 h-4" />
@@ -164,7 +167,7 @@ export const PalabrasGame = () => {
               </button>
               <button
                 onClick={handlePlayAgain}
-                className="border-2 border-darkGreen hover:border-indigo-400 hover:bg-indigo-50 text-darkGreen transition-colors flex items-center justify-center gap-2"
+                className="outline-2 outline-darkGreen hover:outline-darkGreen hover:bg-lightGreen hover:text-white hover:outline-none text-darkGreen transition-colors flex items-center justify-center  p-2"
               >
                 <div className="w-4 h-4" />
                 Jugar de nuevo

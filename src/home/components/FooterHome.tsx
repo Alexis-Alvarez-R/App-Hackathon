@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import facebookIcon from "../../assets/icons/facebook-tag.svg";
 import instagramIcon from "../../assets/icons/instagram.svg";
 import tiktokIcon from "../../assets/icons/tiktok.svg";
@@ -24,45 +22,45 @@ export const FooterHome = () => {
           <h1 className="font-nunito font-bold text-3xl text-lightGreen ">RumboNica</h1>
 
           <p className="w-full deskto:w-[70%] font-nunito">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam commodi corporis doloremque animi inventore
-            reprehenderit ullam cum ab vero nostrum sapiente blanditiis, accusamus velit sit. Aliquid iure ipsam earum
-            vel!
+            Somos una plataforma digital que inspira a descubrir la cultura y naturaleza de Nicaragua. A través de
+            dinámicas de exploración y juego, motivamos a visitar destinos únicos, resaltando también la riqueza de
+            nuestras aves, áreas protegidas y belleza del país.
           </p>
 
           <h2 className="font-nunito font-bold text-2xl text-lightGreen">Contactanos en:</h2>
 
           <div className="flex justify-start items-center gap-4  p-3">
-            <Link to={""}>
+            <a href="https://www.facebook.com/profile.php?id=61581291989568" target="_blank">
               <img
                 className="w-[42px] h-[42px] object-contain hover:scale-120 transition-transform ease-in-out duration-300 "
                 src={facebookIcon}
                 alt=""
               />
-            </Link>
+            </a>
 
-            <Link to={""}>
+            <a href="https://www.instagram.com/rumbo_nica505?igsh=MXRiYWp5N3pkeHRvbg==" target="_blank">
               <img
                 className="w-[42px] h-[42px] object-contain hover:scale-120 transition-transform ease-in-out duration-300 "
                 src={instagramIcon}
                 alt=""
               />
-            </Link>
+            </a>
 
-            <Link to={""}>
+            <a href="http://tiktok.com/@rumbo.nicaoficial" target="_blank">
               <img
                 className="w-[42px] h-[42px] object-contain hover:scale-120 transition-transform ease-in-out duration-300 "
                 src={tiktokIcon}
                 alt=""
               />
-            </Link>
+            </a>
 
-            <Link to={""}>
+            <a href="#" target="_blank">
               <img
                 className="w-[42px] h-[42px] object-contain hover:scale-120 transition-transform ease-in-out duration-300"
                 src={whatsappIcon}
                 alt=""
               />
-            </Link>
+            </a>
           </div>
 
           <button
