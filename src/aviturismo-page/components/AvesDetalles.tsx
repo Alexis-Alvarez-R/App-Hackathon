@@ -7,31 +7,31 @@ export const AvesDetalles = () => {
   const ave = location.state as Ave;
   return (
     <div>
-      <section className=" flex-col-reverse w-screen desktop:flex-row flex justify-around items-center bg-beige">
-        <div className="  w-full desktop:w-[65%]  flex flex-col gap-5 p-3 bg-beige ">
-          <h1 className="  text-xl font-nunito font-bold desktop:text-3xl  text-darkGreen  p-2">
-            <span className="text-black">Nombre Comun: </span>
+      <section className=" flex-col-reverse w-screen desktop:flex-row flex justify-around items-cente bg-gradient-to-r  from-lightGray  to-darkGreen   ">
+        <div className="  w-full desktop:w-[65%]  flex flex-col gap-5 p-3 bg-linear-gradient  from-lightGray  to-darkGreen  ">
+          <h1 className="  text-xl font-nunito font-bold desktop:text-3xl  p-2">
+            <span className="text-ocean">Nombre Comun: </span>
             {ave.nombre_comun}
           </h1>
-          <h2 className=" text-xl font-nunito font-bold desktop:text-3xl  text-darkGreen p-2">
-            <span className="text-black">Nombre Cientifico: </span>
+          <h2 className=" text-xl font-nunito font-bold desktop:text-3xl p-2">
+            <span className="text-ocean">Nombre Cientifico: </span>
             {ave.nombre_cientifico}
           </h2>
-          <h3 className="text-xl font-nunito font-bold text-darkGreen desktop:text-3xl p-2 ">
-            <span className="text-black">Familia: </span>
+          <h3 className="text-xl font-nunito font-bold  desktop:text-3xl p-2 ">
+            <span className="text-ocean">Familia: </span>
             {ave.familias.nombre}
           </h3>
 
-          <div className="flex flex-col-reverse desktop:flex-row justify-around items-center gap-6 p-3  bg-lightGreen rounded-2xl">
-            <div className="w-full desktop:w-[25%] flex flex-col  p-3 bg-beige rounded-2xl hover:bg-darkGreen hover:text-beige transition-colors">
+          <div className="flex flex-col-reverse desktop:flex-row justify-around items-center gap-6 p-3  bg-ocean rounded-2xl">
+            <div className="w-full desktop:w-[25%] flex flex-col  p-3 bg-lightGray rounded-2xl hover:scale-105 transition-transform ease-in-out duration-300">
               <p className="text-xl desktop:text-3xl">{ave.tamano}</p>
               <p className="font-bold">Tamaño</p>
             </div>
-            <div className=" w-full desktop:w-[25%] flex flex-col gap-2  p-3 bg-beige rounded-2xl  hover:bg-darkGreen hover:text-beige transition-colors">
+            <div className=" w-full desktop:w-[25%] flex flex-col gap-2  p-3 bg-lightGray  rounded-2xl  hover:scale-105 transition-transform ease-in-out duration-300">
               <p className=" text-xl desktop:text-3xl">{ave.dieta}</p>
               <p className="font-bold">Dieta</p>
             </div>
-            <div className="w-full desktop:w-[50%] flex flex-col gap-3 px-2 py-4 bg-beige rounded-2xl">
+            <div className="w-full desktop:w-[50%] flex flex-col gap-3 px-2 py-4 bg-lightGray rounded-2xl hover:scale-105 transition-transform ease-in-out duration-300">
               <p className="text-xl desktop:text-3xl">
                 <EstadoAve estado={ave.estados_conservacion.nombre}></EstadoAve>
               </p>
@@ -40,16 +40,16 @@ export const AvesDetalles = () => {
           </div>
         </div>
 
-        <div className=" w-full flex justify-center items-center desktop:w-[35%] hover:scale-105 transition-transform duration-500 ease-in-out  ">
-          <img className="w-full  object-contain " src={ave.url_img} alt={ave.nombre_comun} />
-        </div>
+        <figure className=" w-full   desktop:mr-8 flex justify-center items-center desktop:w-[35%] hover:scale-105 transition-transform duration-500 ease-in-out  ">
+          <img className="w-full desktop:h-[350px]  object-contain " src={ave.url_img} alt={ave.nombre_comun} />
+        </figure>
       </section>
 
-      <section className="flex flex-col desktop:flex-row justify-between items-center gap-5 w-screen bg-lightGreen p-4 mb-5 ">
-        <p className=" w-full desktop:w-[20%] font-nunito font-bold text-3xl p-2  bg-beige rounded-2xl  hover:bg-darkGreen hover:text-beige transition-colors">
+      <section className="flex flex-col desktop:flex-row justify-between items-center gap-5 w-screen bg-gradient-to-r from-lightGray  to-darkGreen p-4 mb-5 ">
+        <p className=" w-full desktop:w-[20%] font-nunito font-bold text-3xl p-2  text-lightGray bg-ocean rounded-2xl  ">
           Descripcion:
         </p>
-        <p className=" w-full desktop:w-[80%] font-nunito font-bold p-2  bg-beige rounded-2xl  hover:bg-darkGreen hover:text-beige transition-colors">
+        <p className=" w-full desktop:w-[80%] font-nunito font-bold p-2 text-lightGray bg-ocean rounded-2xl ">
           {ave.descripcion}
         </p>
       </section>

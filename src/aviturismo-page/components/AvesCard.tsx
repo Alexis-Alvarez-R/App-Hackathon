@@ -9,7 +9,7 @@ interface Props {
 
 export const AvesCard = ({ ave }: Props) => {
   return (
-    <div className=" bg-lightGreen  flex flex-col gap-5 rounded-2xl p-2">
+    <div className=" bg-lightGreen  flex flex-col gap-5 rounded-2xl p-2 shadow-lg ">
       <div className="flex justify-center items-center w-full h-[250px] ">
         <img
           className="w-full h-full object-cover object-top-left rounded-2xl hover:scale-105 transition-transform duration-500 ease-in-out "

@@ -7,7 +7,7 @@ interface Props {
 
 export const AvesGrid = ({ aves }: Props) => {
   return (
-    <div className="w-screen grid  [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))] gap-4  p-4 bg-darkGreen">
+    <div className="w-screen grid  [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))] gap-4  p-4 bg-gradient-to-r from-darkGreen via-beige to-darkGreen">
       {aves.map((ave) => (
         <AvesCard key={ave.ave_id} ave={ave}></AvesCard>
       ))}
