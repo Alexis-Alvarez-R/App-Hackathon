@@ -1,3 +1,12 @@
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 export default function Juegos() {
-  return <h1>Page de Juegos</h1>;
+  return (
+    <div>
+      <h1>Juegos acaaaa</h1>
+      <Link to={"algo"}>A algo</Link>
+      <Outlet />
+    </div>
+  );
 }

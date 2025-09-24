@@ -19,17 +19,25 @@ export const FooterHome = () => {
 
   return (
     <>
-      <footer id="footer" className="w-screen flex-col  bg-black flex desktop:flex-row gap-4 p-2 text-white ">
+      <footer
+        id="footer"
+        className="w-full flex-col  bg-black flex desktop:flex-row gap-4 p-2 text-white "
+      >
         <section className=" w-full py-2 px-4 desktop:ml-8 mt-4 mb-4 flex flex-col gap-5 desktop:w-[50%] ">
-          <h1 className="font-nunito font-bold text-3xl text-lightGreen ">RumboNica</h1>
+          <h1 className="font-nunito font-bold text-3xl text-lightGreen ">
+            RumboNica
+          </h1>
 
           <p className="w-full deskto:w-[70%] font-nunito">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam commodi corporis doloremque animi inventore
-            reprehenderit ullam cum ab vero nostrum sapiente blanditiis, accusamus velit sit. Aliquid iure ipsam earum
-            vel!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            commodi corporis doloremque animi inventore reprehenderit ullam cum
+            ab vero nostrum sapiente blanditiis, accusamus velit sit. Aliquid
+            iure ipsam earum vel!
           </p>
 
-          <h2 className="font-nunito font-bold text-2xl text-lightGreen">Contactanos en:</h2>
+          <h2 className="font-nunito font-bold text-2xl text-lightGreen">
+            Contactanos en:
+          </h2>
 
           <div className="flex justify-start items-center gap-4  p-3">
             <Link to={""}>
@@ -76,18 +84,22 @@ export const FooterHome = () => {
         </section>
 
         <section className="flex flex-col gap-3 w-full desktop:w-[25%] mt-4 ml-4">
-          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">Site Map</h2>
+          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">
+            Site Map
+          </h2>
           <NavLinks links={links}></NavLinks>
         </section>
 
         <section className="flex flex-col gap-4 w-full desktop:w-[25%] mt-4 ml-4 mb-4">
-          <h2 className="text-lightGreen text-2xl font-nunito font-bold">Legal</h2>
+          <h2 className="text-lightGreen text-2xl font-nunito font-bold">
+            Legal
+          </h2>
           <h3 className="font-nunito">Privacy Policy</h3>
           <h3 className="font-nunito">Terms of Services</h3>
           <h3 className="font-nunito">Lawyer's Corners</h3>
         </section>
       </footer>
-      <div className=" w-screen h-[10px] bg-darkGreen"></div>
+      <div className=" w-full h-[10px] bg-darkGreen"></div>
     </>
   );
 };

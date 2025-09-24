@@ -26,7 +26,11 @@ export default function LugarMarker({ lugar, MarkerProp }: prop) {
   const fnMap = useMap();
 
   return (
-    <Marker position={[lat, lng]} eventHandlers={{ click: () => selectMarker({ lat, lng }, fnMap) }} icon={redIcon}>
+    <Marker
+      position={[lat, lng]}
+      eventHandlers={{ click: () => selectMarker({ lat, lng }, fnMap) }}
+      icon={redIcon}
+    >
       <LugarPopup lugar={lugar} />
     </Marker>
   );

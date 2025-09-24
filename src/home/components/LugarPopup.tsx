@@ -15,7 +15,9 @@ export default function LugarPopup({ lugar }: propLugar) {
   }
   return (
     <Popup className="w-[240px] h-[140px] m-h-[140px]">
-      <h1 className="text-center pt-1.5 pb-1.5 text-[20px] font-bold text-[#f7f7f7]">{nombre}</h1>
+      <h1 className="text-center pt-1.5 pb-1.5 text-[20px] font-bold text-[#f7f7f7]">
+        {nombre}
+      </h1>
       <div className="[border-radius:12px] overflow-hidden">
         <img className="h-[170px] w-full object-cover" src={img} alt="" />
       </div>

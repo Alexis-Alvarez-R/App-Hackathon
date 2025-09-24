@@ -6,8 +6,7 @@ export default function Map() {
       <h1 className="text-5xl font-nunito font-semibold text-center">
         Localidades Turisticas
       </h1>
-      ;
-      <MapView />;
+      <MapView />
     </>
   );
 }
