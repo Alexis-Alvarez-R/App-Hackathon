@@ -9,9 +9,6 @@
   --color-lightGreen: #81c784;
   --color-skyBlue: #4fc3f7;
   --color-beige: #f5e6ca;
-  --color-gris: #8f96a1;
-  --color-lightGray: #deedfa;
-  --color-ocean: #20887e;
 
   --font-nunito: "Nunito";
 }
@@ -87,17 +84,3 @@ html {
   animation: animacion-slider-entrada 1s ease forwards;
 }
 /* ------------------------------------------ */
-
-#padre {
-  &:hover #hijo {
-    clip-path: circle(200% at 0% 100%);
-  }
-}
-
-#hijo {
-  width: 100%;
-  height: 100%; /* alto del div */
-  background-color: rgb(255, 166, 0);
-  clip-path: circle(20% at 0% 100%);
-  transition: all 0.7s ease;
-}
