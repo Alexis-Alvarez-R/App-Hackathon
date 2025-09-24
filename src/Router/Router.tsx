@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import { HeaderHome } from "../home/components/HeaderHome";
 import Home from "../home/components/Home";
 import InicioSesion from "../Auth/InicioSesion";
@@ -14,9 +20,11 @@ import { NotFound } from "./components/NotFound";
 import { PalabrasGame } from "../Juegos/Components/PalabrasGame";
 
 export default function Router() {
+  const ruta = useLocation();
+  const is404 = ruta.pathname == "/404";
   return (
-    <BrowserRouter>
-      <HeaderHome />
+    <>
+      {is404 || <HeaderHome />}
       <Routes>
         <Route path="/Inicio" element={<Home />} />
         <Route path="/Inicio-sesion" element={<InicioSesion />} />
@@ -24,7 +32,10 @@ export default function Router() {
         <Route path="/Aviturismo" element={<AviturismoPage />} />
         <Route element={<PrivateRouter />}>
           <Route path="/Juegos" element={<Juegos />}>
-            <Route path="ScrambleWords" element={<PalabrasGame></PalabrasGame>}></Route>
+            <Route
+              path="ScrambleWords"
+              element={<PalabrasGame></PalabrasGame>}
+            ></Route>
           </Route>
         </Route>
         <Route path="/Aves-Detalles" element={<AvesDetalles />} />
@@ -32,9 +43,10 @@ export default function Router() {
         <Route index element={<Navigate to="/Inicio"></Navigate>}></Route>{" "}
         <Route path="/Perfil" element={<Perfil />} />
         //fixed el not found
-        <Route path="*" element={<NotFound></NotFound>} />
+        <Route path="/404" element={<NotFound />}></Route>
+        <Route path="*" element={<Navigate to={"/404"}></Navigate>} />
       </Routes>
-      <FooterHome></FooterHome>
-    </BrowserRouter>
+      {is404 || <FooterHome />}
+    </>
   );
 }
