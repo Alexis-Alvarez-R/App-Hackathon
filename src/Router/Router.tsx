@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HeaderHome } from "../home/components/HeaderHome";
 import Home from "../home/components/Home";
 import InicioSesion from "../Auth/InicioSesion";
@@ -12,7 +6,7 @@ import Registro from "../Auth/Registro";
 import { AviturismoPage } from "../aviturismo-page/components/AviturismoPage";
 import { AvesDetalles } from "../aviturismo-page/components/AvesDetalles";
 import Juegos from "../Juegos/Components/Juegos";
-import Perfil from "../Perfil/Components/Perfil";
+import Perfil from "../Perfil/Perfil";
 import PrivateRouter from "./components/privateRouter";
 import { FooterHome } from "../home/components/FooterHome";
 import DetalleLugar from "../home/DetalleLugar/DetalleLugar";
