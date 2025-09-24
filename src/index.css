@@ -5,13 +5,19 @@
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1080px;
 
+  --color-regularGreen: #4caf50;
   --color-darkGreen: #2e7d32;
   --color-lightGreen: #81c784;
+  --color-regularBlue: #3b82f6;
   --color-skyBlue: #4fc3f7;
+  --color-darkBlue: #1d3885;
   --color-beige: #f5e6ca;
   --color-gris: #8f96a1;
   --color-lightGray: #deedfa;
   --color-ocean: #20887e;
+  --color-lightOcean: #2ec4b6;
+  --color-amarillo: #ffca3a;
+  --color-naranja: #f27400;
 
   --font-nunito: "Nunito";
 }
