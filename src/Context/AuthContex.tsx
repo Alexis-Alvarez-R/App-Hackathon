@@ -25,10 +25,11 @@ export function SesionProvider({ children }: prop) {
           }
         );
         if (fetching.ok) {
-          const data = await fetching.json();
+          const data: Sesion = await fetching.json();
           setSesion({
-            nombre: data.nombre,
+            name: data.name,
             email: data.email,
+            picture: data.picture,
           });
 
           console.log("si tod bien");

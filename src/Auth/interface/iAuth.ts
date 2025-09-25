@@ -1,6 +1,7 @@
 export interface Sesion {
-  nombre: string;
+  name: string;
   email: string;
+  picture: string;
 }
 
 export interface SesionContextType {
