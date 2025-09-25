@@ -9,10 +9,10 @@ interface Props {
 
 export const AvesCard = ({ ave }: Props) => {
   return (
-    <div className=" bg-lightGreen  flex flex-col gap-5 rounded-2xl p-2 shadow-lg ">
+    <div className=" bg-lightGreen  flex flex-col gap-5 rounded-2xl p-2 shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out ">
       <div className="flex justify-center items-center w-full h-[250px] ">
         <img
-          className="w-full h-full object-cover object-top-left rounded-2xl hover:scale-105 transition-transform duration-500 ease-in-out "
+          className="w-full h-full object-cover object-top-left rounded-2xl  "
           src={ave.url_img}
           alt={ave.nombre_comun}
         />
@@ -22,7 +22,7 @@ export const AvesCard = ({ ave }: Props) => {
       </h2>
 
       <div className="flex justify-between items-center gap-3 w-full">
-        <p className="  px-2 py-3 rounded-2xl bg-beige font-nunito font-bold w-[80%] desktop:w-[70%]">
+        <p className="  px-2 py-3 rounded-2xl bg-beige font-nunito font-bold w-[80%] ">
           {" "}
           Estado: <EstadoAve estado={ave.estados_conservacion.nombre}></EstadoAve>
         </p>

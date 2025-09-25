@@ -74,15 +74,15 @@ export const FooterHome = () => {
         </section>
 
         <section className="flex flex-col gap-3 w-full desktop:w-[25%] mt-4 ml-4">
-          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">Site Map</h2>
+          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">Enlaces Rapidos</h2>
           <NavLinks links={links}></NavLinks>
         </section>
 
         <section className="flex flex-col gap-4 w-full desktop:w-[25%] mt-4 ml-4 mb-4">
           <h2 className="text-lightGreen text-2xl font-nunito font-bold">Legal</h2>
-          <h3 className="font-nunito">Privacy Policy</h3>
-          <h3 className="font-nunito">Terms of Services</h3>
-          <h3 className="font-nunito">Lawyer's Corners</h3>
+          <h3 className="font-nunito">Politicas de Privacidad</h3>
+          <h3 className="font-nunito">Terminos y condiciones</h3>
+          <h3 className="font-nunito">Todos los Derechos Reservados</h3>
         </section>
       </footer>
       <div className=" w-full h-[10px] bg-darkGreen"></div>

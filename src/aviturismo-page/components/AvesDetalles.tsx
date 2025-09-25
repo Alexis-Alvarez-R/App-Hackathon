@@ -1,10 +1,34 @@
 import { useLocation } from "react-router-dom";
 import type { Ave } from "../interface/Ave";
 import { EstadoAve } from "./EstadoAve";
+import AvesMapa from "./AvesMapa";
 
 export const AvesDetalles = () => {
   const location = useLocation();
   const ave = location.state as Ave;
+
+  //Data Fake
+
+  const conteoAvistamientos = {
+    Boaco: 12,
+    Carazo: 18,
+    Chinandega: 15,
+    Chontales: 14,
+    Estelí: 22,
+    Granada: 25,
+    Jinotega: 30,
+    León: 35,
+    Madriz: 8,
+    Managua: 50,
+    Masaya: 10,
+    Matagalpa: 28,
+    "Nueva Segovia": 9,
+    "Río San Juan": 20,
+    Rivas: 27,
+    "Costa Caribe Norte": 45,
+    "Costa Caribe Sur": 42,
+  };
+
   return (
     <div>
       <section className=" flex-col-reverse w-screen desktop:flex-row flex justify-around items-cente bg-gradient-to-r  from-lightGray  to-darkGreen   ">
@@ -45,7 +69,7 @@ export const AvesDetalles = () => {
         </figure>
       </section>
 
-      <section className="flex flex-col desktop:flex-row justify-between items-center gap-5 w-screen bg-gradient-to-r from-lightGray  to-darkGreen p-4 mb-5 ">
+      <section className="flex flex-col desktop:flex-row justify-between items-center gap-5 w-screen bg-gradient-to-r from-lightGray  to-darkGreen p-4  ">
         <p className=" w-full desktop:w-[20%] font-nunito font-bold text-3xl p-2  text-lightGray bg-ocean rounded-2xl  ">
           Descripcion:
         </p>
@@ -54,8 +78,14 @@ export const AvesDetalles = () => {
         </p>
       </section>
 
-      <section className="w-screen border-4 border-green-700 ">
-        <h1 className="w-full p-3 text-center">MAPA DE DISTRIBUCION</h1>
+      <section className="w-screen flex flex-col justify-center items-center  bg-gradient-to-r  from-lightGray  to-darkGreen p-4 mb-10">
+        <h1 className="w-full desktop:w-[50%] p-3 text-center text-3xl  text-black font-nunito font-bold bg-lightGray rounded-2xl mb-5 ">
+          MAPA DE DISTRIBUCION
+        </h1>
+        <div className=" w-full desktop:w-[70%] flex justify-center items-center ">
+          {/* Usa el nuevo componente de mapa */}
+          <AvesMapa conteoAvistamientos={conteoAvistamientos} />
+        </div>
       </section>
     </div>
   );
