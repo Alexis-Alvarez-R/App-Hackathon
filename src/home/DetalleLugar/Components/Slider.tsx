@@ -6,17 +6,17 @@ import useImagenesLugar from "../hooks/useImagenesLugar";
 interface prop {
   id: number;
   nombre: string;
+  imgDefault: string;
 }
 
-export default function Slider({ id, nombre }: prop) {
+export default function Slider({ id, nombre, imgDefault }: prop) {
   const $content_imagenes = useRef<HTMLDivElement | null>(null);
   const $content_subimagenes = useRef<HTMLDivElement | null>(null);
   const imagenes = useImagenesLugar(id);
+  const tiempo = 4000;
 
   useEffect(() => {
-    if (!imagenes || imagenes.length == 0) {
-      return;
-    }
+    if (!imagenes || imagenes.length == 0) return;
     const interval = setInterval(() => {
       const $imagenes = $content_imagenes.current?.querySelectorAll(".imagen");
       const $subimagenes =
@@ -39,7 +39,7 @@ export default function Slider({ id, nombre }: prop) {
         },
         { once: true }
       );
-    }, 4000);
+    }, tiempo);
     return () => clearInterval(interval);
   }, [imagenes]);
 
@@ -69,7 +69,7 @@ export default function Slider({ id, nombre }: prop) {
             );
           })
         ) : (
-          <p>Cargando</p>
+          <img src={imgDefault} alt="" />
         )}
       </div>
       <div
@@ -78,25 +78,23 @@ export default function Slider({ id, nombre }: prop) {
         className="absolute left-[50%] bottom-[8%] z-40 w-[140%] h-[35%] flex gap-4
         desktop:left-[60%]"
       >
-        {imagenes ? (
-          imagenes.map((imagen, i) => {
-            return (
-              <div
-                key={i}
-                className="subimagen w-[35%] h-full rounded-[14px] overflow-hidden [box-shadow:2px_3px_10px_2px_black] [filter:grayscale(40%)]
+        {imagenes
+          ? imagenes.map((imagen, i) => {
+              return (
+                <div
+                  key={i}
+                  className="subimagen w-[35%] h-full rounded-[14px] overflow-hidden [box-shadow:2px_3px_10px_2px_black] [filter:grayscale(40%)]
                 desktop:w-[12%]"
-              >
-                <img
-                  src={imagen}
-                  alt={imagen}
-                  className="w-full h-full  object-cover"
-                />
-              </div>
-            );
-          })
-        ) : (
-          <p>Cargando</p>
-        )}
+                >
+                  <img
+                    src={imagen}
+                    alt={imagen}
+                    className="w-full h-full  object-cover"
+                  />
+                </div>
+              );
+            })
+          : null}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { type Lugar } from "../interfaces/Lugar";
 import { turismoAPiFecth } from "../../apis/turismo.api";
 
 export default function useLugares() {
-  const [lugares, setLugares] = useState<Lugar[]>([]); // <-- array vacío inicial
+  const [lugares, setLugares] = useState<Lugar[]>([]);
 
   useEffect(() => {
     async function fetchLugares() {
@@ -16,7 +16,7 @@ export default function useLugares() {
         setLugares(data);
       } catch (err) {
         console.error(err);
-        setLugares([]); // fallback seguro
+        setLugares([]);
       }
     }
     fetchLugares();

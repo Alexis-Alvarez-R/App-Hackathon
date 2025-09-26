@@ -129,3 +129,48 @@ summary::marker {
     left: 100%;
   }
 }
+
+details {
+  padding: 10px;
+}
+
+details summary {
+  cursor: pointer;
+  transition: margin 0.4s ease-out;
+}
+
+details[open] summary {
+  margin-bottom: 10px;
+}
+
+#perfil {
+  animation: animacionperfil 1s ease forwards;
+}
+
+@keyframes animacionperfil {
+  from {
+    filter: blur(20px);
+    transform: translateY(90vh);
+    scale: 90%;
+  }
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    scale: 1;
+  }
+}
+
+.splash1 {
+  animation: splash1 2s ease forwards;
+}
+
+@keyframes splash1 {
+  from {
+    transform: translateX(-200%);
+    scale: 70%;
+  }
+  to {
+    transform: translateX(0%);
+    scale: 1;
+  }
+}
