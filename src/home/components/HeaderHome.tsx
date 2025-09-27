@@ -16,15 +16,12 @@ export const HeaderHome = () => {
   }
 
   return (
-    <header
-      id="header"
-      className="w-full flex justify-end gap-4 border-2 border-white bg-black text-white p-3 mb-4"
-    >
-      <figure className="flex items-center w-[60%]">
-        <img
-          src={logo}
-          className="w-full h-[80px] object-contain"
-        ></img>
+    <header className="w-full flex justify-between gap-4 border-2 border-white bg-black text-white p-3 mb-4">
+      <figure className="flex items-center w-[40%] desktop:[70%] border-white border-2">
+        <img src={logo} className="w-[30%] h-[50px] object-contain "></img>
+        <p className="text-lightGreen font-nunito font-bold w-[50%]">
+          Rumbo <span className="text-lightGreen">Nica</span>
+        </p>
       </figure>
       <nav className="hidden desktop:flex justify-center items-center gap-4 border-2 border-white   px-5 py-2 w-[40%] ">
         <NavLinks links={links}></NavLinks>
