@@ -25,7 +25,7 @@ export default function ButtonGoogle({ accionquery }: props) {
       if (window.google && buttonRef.current) {
         window.google.accounts.id.initialize({
           client_id:
-            "604063939668-kju71nqdf99fn8lg581prs6j9ba50l8s.apps.googleusercontent.com",
+            "492388293091-clirrcpj162pl46g9ao53hft4uoa2qh5.apps.googleusercontent.com",
           callback: async (response: any) => {
             try {
               const res = await fetch(
