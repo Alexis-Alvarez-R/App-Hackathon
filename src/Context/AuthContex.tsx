@@ -6,6 +6,7 @@ import {
   type JSX,
 } from "react";
 import { type Sesion, type SesionContextType } from "../Auth/interface/iAuth";
+import { turismoAPiFecth } from "../apis/turismo.api";
 
 interface prop {
   children: JSX.Element | JSX.Element[];
@@ -19,7 +20,7 @@ export function SesionProvider({ children }: prop) {
     async function verificarSesion() {
       try {
         const fetching = await fetch(
-          "http://localhost:3000/auth/verificarsesion",
+          `${turismoAPiFecth}}auth/verificarsesion`,
           {
             credentials: "include",
           }
