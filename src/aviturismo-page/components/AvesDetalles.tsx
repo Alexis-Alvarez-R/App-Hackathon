@@ -65,7 +65,11 @@ export const AvesDetalles = () => {
         </div>
 
         <figure className=" w-full   desktop:mr-8 flex justify-center items-center desktop:w-[35%] hover:scale-105 transition-transform duration-500 ease-in-out  ">
-          <img className="w-full desktop:h-[350px]  object-contain " src={ave.url_img} alt={ave.nombre_comun} />
+          <img
+            className="w-full desktop:h-[350px]  object-contain "
+            src={ave.url_img}
+            alt={ave.nombre_comun}
+          />
         </figure>
       </section>
 

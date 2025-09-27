@@ -8,7 +8,7 @@ export default function useImagenesLugar(id: number) {
     async function fetchImagenes() {
       try {
         const fetching = await fetch(
-          `${turismoAPiFecth}/lugares/getimageneslugar?id=${id}`,
+          `${turismoAPiFecth}lugares/getimageneslugar?id=${id}`,
           {
             credentials: "include",
           }

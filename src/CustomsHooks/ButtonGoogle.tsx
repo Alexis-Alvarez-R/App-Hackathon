@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import type { typeActionQuery } from "../Auth/Auth";
 import { useNavigate } from "react-router-dom";
 import { useSesionContex } from "../Context/AuthContex";
+import { turismoAPiFecth } from "../apis/turismo.api";
 
 declare global {
   interface Window {
@@ -28,7 +29,7 @@ export default function ButtonGoogle({ accionquery }: props) {
           callback: async (response: any) => {
             try {
               const res = await fetch(
-                `http://localhost:3000/auth/google/callback?accion=${accionquery}`,
+                `${turismoAPiFecth}auth/google/callback?accion=${accionquery}`,
                 {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import Auth from "./Auth";
+import { turismoAPiFecth } from "../apis/turismo.api";
 
 export default function InicioSesion() {
   return (
     <Auth
-      endpoint="http://localhost:3000/auth/iniciarsesion"
+      endpoint={`${turismoAPiFecth}auth/iniciarsesion`}
       title="Inciar sesion"
       textBtn="Siguiente"
       accionquery="iniciosesion"

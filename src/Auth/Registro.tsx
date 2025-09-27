@@ -1,9 +1,10 @@
 import Auth from "./Auth";
+import { turismoAPiFecth } from "../apis/turismo.api";
 
 export default function Registro() {
   return (
     <Auth
-      endpoint="http://localhost:3000/auth/registrar"
+      endpoint={`${turismoAPiFecth}auth/registrar`}
       title="Crea una cuenta"
       textBtn="Continuar con correo electronico"
       inputNombre={true}

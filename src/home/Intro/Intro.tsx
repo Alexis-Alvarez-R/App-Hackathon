@@ -1,25 +1,13 @@
-import logo from "../../assets/icons/logo.png";
-import letra from "../../assets/icons/letra.png";
-import { useEffect, useState } from "react";
+import logoLetra from "../../assets/img/logo-letra.png";
 
 export default function Intro() {
-  const [state, setState] = useState(true);
-  const tiempo = 2000;
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setState(false);
-    }, tiempo);
-
-    return () => clearTimeout(timeout);
-  }, []);
   return (
-    <div className="absolute z-50 h-[95vh] w-screen bg-green-100">
+    <div className="absolute z-50 h-[95vh] w-full bg-white">
       <img
-        className="absolute  top-[50%] transform-[translateY(-50%)] w-[200px] splash1"
-        src={logo}
+        className="absolute top-[50%] left-[50%]  w-[200px] splash1"
+        src={logoLetra}
         alt=""
       />
-      <img className="w-[200px]" src={letra} alt="" />
     </div>
   );
 }

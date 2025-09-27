@@ -8,7 +8,7 @@ export default function useLugares() {
   useEffect(() => {
     async function fetchLugares() {
       try {
-        const fetching = await fetch(`${turismoAPiFecth}/lugares/getlugares`);
+        const fetching = await fetch(`${turismoAPiFecth}lugares/getlugares`);
         if (!fetching.ok) return;
 
         const data = await fetching.json();

@@ -4,6 +4,7 @@ import { NavLinks } from "./NavLinks";
 import { useSesionContex } from "../../Context/AuthContex";
 
 import { MenuDesplegable } from "./MenuDesplegable";
+import logo from "../../assets/img/logo.png";
 
 const links = ["Inicio", "Aviturismo", "Explora", "Juegos", "Contacto"];
 
@@ -19,7 +20,12 @@ export const HeaderHome = () => {
       id="header"
       className="w-full flex justify-end gap-4 border-2 border-white bg-black text-white p-3 mb-4"
     >
-      <p className="border-4 border-white px-4 py-2 ml-auto">LOGO</p>
+      <figure className="flex items-center w-[60%]">
+        <img
+          src={logo}
+          className="w-full h-[80px] object-contain"
+        ></img>
+      </figure>
       <nav className="hidden desktop:flex justify-center items-center gap-4 border-2 border-white   px-5 py-2 w-[40%] ">
         <NavLinks links={links}></NavLinks>
       </nav>

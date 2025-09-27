@@ -43,31 +43,23 @@ export default function LogrosMedallas() {
         <div className="flex flex-col gap-2 desktop:grid desktop:[grid-template-columns:repeat(auto-fit,minmax(280px,1fr))] desktop:gap-4 desktop:pl-3 pr-3">
           <TarjetaMedalla
             img={cascada}
-            titulo={"Medalla Top"}
-            texto={
-              "Medalla en concepto de no se que pronto veremos bla bla bla"
-            }
+            titulo={"Rumbo Cascada"}
+            texto={"Visita al menos 3 reservas o parques naturales"}
           />
           <TarjetaMedalla
             img={extremo}
-            titulo={"Medalla Top"}
-            texto={
-              "Medalla en concepto de no se que pronto veremos bla bla bla"
-            }
+            titulo={"Rumbo Extremo"}
+            texto={"Visita el cerro negro y has canopy en catarina"}
           />
           <TarjetaMedalla
             img={laguna}
-            titulo={"Medalla Top"}
-            texto={
-              "Medalla en concepto de no se que pronto veremos bla bla bla"
-            }
+            titulo={"Rumbo Lagos"}
+            texto={"Visita las dos joyas de Nicaragua, cocibolca y xolotlan"}
           />
           <TarjetaMedalla
             img={reserva}
-            titulo={"Medalla Top"}
-            texto={
-              "Medalla en concepto de no se que pronto veremos bla bla bla"
-            }
+            titulo={"Rumbo Naturaleza"}
+            texto={"Visita al menos 3 reservas o parques naturales"}
           />
         </div>
       </details>
