@@ -80,5 +80,5 @@ export default function ButtonGoogle({ accionquery }: props) {
     }
   }, [accionquery, nav]);
 
-  return <div ref={buttonRef}></div>;
+  return <div ref={buttonRef} className="w-full [&>div]:w-full"></div>;
 }
