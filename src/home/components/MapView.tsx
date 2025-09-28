@@ -23,13 +23,13 @@ export default function MapView() {
   }
 
   return (
-    <div className="box-border h-[80vh] w-full relative">
+    <div className="box-border h-[70vh] w-full relative mb-8">
       <MapContainer
         center={[12.705148770875159, -85.43151602843885]}
         zoom={6.7}
         minZoom={6}
         maxZoom={10}
-        className="absolute w-[85%] h-[90%] left-[50%] top-[50%] [transform:translate(-50%,_-50%)] rounded-2xl desktop:w-[80%] desktop:h-[95%]"
+        className="absolute w-[85%] h-[100%] left-[50%] top-[50%] [transform:translate(-50%,_-50%)] rounded-2xl desktop:w-[80%] desktop:h-[95%]"
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 

@@ -59,6 +59,7 @@ export default function ButtonGoogle({ accionquery }: props) {
           size: "large",
           type: "standard",
           text: "continue_with",
+          logo_alignment: "center",
         });
         window.google.accounts.id.disableAutoSelect();
       }
