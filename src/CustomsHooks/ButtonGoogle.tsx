@@ -60,6 +60,7 @@ export default function ButtonGoogle({ accionquery }: props) {
           type: "standard",
           text: "continue_with",
         });
+        window.google.accounts.id.disableAutoSelect();
       }
     };
 
