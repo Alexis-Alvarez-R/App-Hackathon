@@ -1,69 +1,74 @@
-# React + TypeScript + Vite
+# Rumbo Nica
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma digital que inspira a descubrir la cultura y naturaleza de Nicaragua. A través de dinámicas de exploración y juego, motivamos a visitar destinos únicos, resaltando también la riqueza de nuestras aves, áreas protegidas y belleza del país.
 
-Currently, two official plugins are available:
+![Logo](https://fydjtuqzsqyjucwyamdx.supabase.co/storage/v1/object/public/aves-img/logo-letra.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Link de la plataforma
 
-## Expanding the ESLint configuration
+- [Rumbo Nica](https://rumbonica.netlify.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Autores
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [@Alexis-Alvarez-R](https://github.com/Alexis-Alvarez-R)
+- [@Yaser-Somarriba](https://github.com/YSomarriba02)
+- [@Edith-Sanchez](Edithsanchezc02@gmail.com)
+- [@Jose-Noguera](https://github.com/Noguera1005)
+- [@Jose-Mayorga](je43rm@gmail.com)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Instalacion y Ejecucion Local (En caso de que el Host falle)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clona los repositorios (Server y Cliente)
+
+```bash
+  git clone https://github.com/Alexis-Alvarez-R/App-Hackathon.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+  git clone https://github.com/Alexis-Alvarez-R/Server-Hackathon.git
 ```
+
+Instalar las depedencias necesarias (Ambos)
+
+```bash
+  npm install
+```
+
+Levantar entorno de desarrollo (Cliente)
+
+```bash
+  npm run dev
+```
+
+Ejecuta la transpilacion y watch (Server)
+
+```bash
+  npm run dev
+```
+
+Levantar el server localmente (Server)
+
+```bash
+  npm run start
+```
+
+## Variables de Entorno
+
+Para poder ejecutar el servidor de forma local son necesarias ciertas variables de entorno. Por temas de seguridad no podemos compartilas por aqui, contactenos personalmente para poder proporcionar el archivo .env
+
+## Funcionalidades
+
+- Registro de usuarios
+- Biblioteca de aves
+- Biblioteca de lugares turisticos
+- Modulo educativo gamificado
+- Sistema de logros
+- y mucho mas...
+
+## Stack Tecnologico
+
+**Cliente:** HTML, CSS, TailwindCSS, JavaScript, TypeScript, React
+
+**Server:** Node.Js, Express.Js.
+
+**Gestor BD:** PostgreSQL, Supabase.
