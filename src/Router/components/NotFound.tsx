@@ -8,9 +8,9 @@ export const NotFound = () => {
       <h2 className="w-full text-center p-2 font-nunito text-6xl font-bold text-darkGreen">Page Not Found</h2>
 
       <p className="w-[80%] font-nunito font-black text-center">
-        Lo sentimos, página no encontrada Parece que te has perdido. La página que estás buscando no existe o no esta
-        terminada. Puedes usar la barra de navegación para encontrar lo que buscas o, si lo prefieres, volver a la
-        página de inicio para empezar de nuevo.
+        Lo sentimos, página no encontrada Parece que te has perdido. La página que estás buscando no existe o{" "}
+        <span className="text-regularGreen text-xl"> no esta terminada.</span> Puedes usar la barra de navegación para
+        encontrar lo que buscas o, si lo prefieres, volver a la página de inicio para empezar de nuevo.
       </p>
 
       <Link

@@ -13,7 +13,7 @@ const filtros = [
 ];
 
 export const AviturismoPage = () => {
-  const { aves, obtenerAves, filtrarAvesPorZona } = useAve();
+  const { aves, obtenerAves, filtrarAvesPorZona, isLoading } = useAve();
   const [zona, setZona] = useState<number>(0);
 
   useEffect(() => {
@@ -35,7 +35,13 @@ export const AviturismoPage = () => {
   return (
     <div className="flex  flex-col justify-center items-center mb-6">
       <AvesFiltro filtros={filtros} onFiltroClick={handleFiltroClick}></AvesFiltro>
-      <AvesGrid aves={aves}></AvesGrid>
+      {isLoading ? (
+        <div className="text-center py-10">
+          <span className="animate-pulse text-4xl text-darkGreen"> Cargando aves...</span>
+        </div>
+      ) : (
+        <AvesGrid aves={aves}></AvesGrid>
+      )}
     </div>
   );
 };

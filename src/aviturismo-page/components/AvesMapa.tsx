@@ -53,7 +53,13 @@ const AvesMapa: React.FC<Props> = ({ conteoAvistamientos }) => {
   };
 
   return (
-    <MapContainer center={nicaraguaCenter} zoom={7} style={{ height: "600px", width: "100%" }}>
+    <MapContainer
+      center={nicaraguaCenter}
+      zoom={6.7}
+      minZoom={6}
+      maxZoom={10}
+      style={{ height: "600px", width: "80%" }}
+    >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {/*
         El componente GeoJSON renderiza los polígonos

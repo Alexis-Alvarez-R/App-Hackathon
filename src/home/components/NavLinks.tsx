@@ -18,7 +18,7 @@ export const NavLinks = ({ links }: Props) => {
           return (
             <button
               key={index}
-              className="w-full hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito  text-start"
+              className=" text-md hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito  text-start"
               onClick={handleScrollToBottom}
             >
               {link}
@@ -29,7 +29,7 @@ export const NavLinks = ({ links }: Props) => {
             <Link
               key={index}
               to={link}
-              className="w-full  hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito"
+              className=" text-md  hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito"
             >
               {link}
             </Link>

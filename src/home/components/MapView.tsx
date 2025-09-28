@@ -68,6 +68,8 @@ export default function MapView() {
       <MapContainer
         center={[12.705148770875159, -85.43151602843885]}
         zoom={6.7}
+        minZoom={6}
+        maxZoom={10}
         className="absolute w-[85%] h-[90%] left-[50%] top-[50%] [transform:translate(-50%,_-50%)] rounded-2xl desktop:w-[80%] desktop:h-[95%]"
       >
         <TileLayer
@@ -78,11 +80,7 @@ export default function MapView() {
         {lugares.length == 0
           ? null
           : lugares.map((lugar) => (
-              <LugarMarker
-                key={lugar.id}
-                lugar={lugar}
-                MarkerProp={{ selectMarker: centerMarker }}
-              />
+              <LugarMarker key={lugar.id} lugar={lugar} MarkerProp={{ selectMarker: centerMarker }} />
             ))}
       </MapContainer>
     </div>

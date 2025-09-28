@@ -65,11 +65,7 @@ export const AvesDetalles = () => {
         </div>
 
         <figure className=" w-full   desktop:mr-8 flex justify-center items-center desktop:w-[35%] hover:scale-105 transition-transform duration-500 ease-in-out  ">
-          <img
-            className="w-full desktop:h-[350px]  object-contain "
-            src={ave.url_img}
-            alt={ave.nombre_comun}
-          />
+          <img className="w-full desktop:h-[350px]  object-contain " src={ave.url_img} alt={ave.nombre_comun} />
         </figure>
       </section>
 
@@ -86,7 +82,7 @@ export const AvesDetalles = () => {
         <h1 className="w-full desktop:w-[50%] p-3 text-center text-3xl  text-black font-nunito font-bold bg-lightGray rounded-2xl mb-5 ">
           MAPA DE DISTRIBUCION
         </h1>
-        <div className=" w-full desktop:w-[70%] flex justify-center items-center ">
+        <div className=" w-full px-4 desktop:w-[70%] flex justify-center items-center ">
           {/* Usa el nuevo componente de mapa */}
           <AvesMapa conteoAvistamientos={conteoAvistamientos} />
         </div>

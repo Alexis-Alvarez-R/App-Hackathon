@@ -4,7 +4,7 @@ import { NavLinks } from "./NavLinks";
 import { useSesionContex } from "../../Context/AuthContex";
 
 import { MenuDesplegable } from "./MenuDesplegable";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logo-letra.png";
 
 const links = ["Inicio", "Aviturismo", "Explora", "Juegos", "Contacto"];
 
@@ -16,14 +16,11 @@ export const HeaderHome = () => {
   }
 
   return (
-    <header className="w-full flex justify-between gap-4 border-2 border-white bg-black text-white p-3 mb-4">
-      <figure className="flex items-center w-[40%] desktop:[70%] border-white border-2">
-        <img src={logo} className="w-[30%] h-[50px] object-contain "></img>
-        <p className="text-lightGreen font-nunito font-bold w-[50%]">
-          Rumbo <span className="text-lightGreen">Nica</span>
-        </p>
+    <header className="w-full flex justify-between gap-4  bg-black text-white p-3 mb-4">
+      <figure className="flex justify-start items-center w-[20%]  ">
+        <img src={logo} className="w-full h-[50px] object-contain "></img>
       </figure>
-      <nav className="hidden desktop:flex justify-center items-center gap-4 border-2 border-white   px-5 py-2 w-[40%] ">
+      <nav className="hidden desktop:flex justify-center items-center gap-2   px-5 py-2 w-[50%] ">
         <NavLinks links={links}></NavLinks>
       </nav>
       <MenuDesplegable links={links}></MenuDesplegable>
@@ -38,7 +35,7 @@ export const HeaderHome = () => {
       ) : (
         <Link
           to={"/Inicio-sesion"}
-          className=" hidden desktop:block mr-10 bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform "
+          className=" hidden desktop:block mr-10  bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform "
         >
           Inicie sesion
         </Link>

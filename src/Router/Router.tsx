@@ -25,18 +25,16 @@ export default function Router() {
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Aviturismo" element={<AviturismoPage />} />
         <Route element={<PrivateRouter />}>
-          <Route path="/Juegos" element={<Juegos />}>
-            <Route
-              path="ScrambleWords"
-              element={<PalabrasGame></PalabrasGame>}
-            ></Route>
+          <Route path="/Juegos">
+            <Route index element={<Juegos></Juegos>}></Route>
+            <Route path="ScrambleWords" element={<PalabrasGame></PalabrasGame>}></Route>
+            <Route path="*" element={<Navigate to={"/404"} />} />
           </Route>
         </Route>
         <Route path="/Aves-Detalles" element={<AvesDetalles />} />
         <Route path="/Detallelugar/:lugar" element={<DetalleLugar />} />
-        <Route index element={<Navigate to="/Inicio"></Navigate>}></Route>{" "}
-        <Route path="/Perfil" element={<Perfil />} />
-        //fixed el not found
+        <Route index element={<Navigate to="/Inicio"></Navigate>}></Route> <Route path="/Perfil" element={<Perfil />} />
+        {/*fixed el not found*/}
         <Route path="/404" element={<NotFound />}></Route>
         <Route path="*" element={<Navigate to={"/404"}></Navigate>} />
       </Routes>
