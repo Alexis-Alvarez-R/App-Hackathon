@@ -7,8 +7,11 @@ import { useEffect, useState } from "react";
 
 export const App = () => {
   const [state, setState] = useState(true);
-  const tiempo = 2000;
+  const tiempo = 2300;
   useEffect(() => {
+    if (sessionStorage.getItem("intro")) setState(false);
+    sessionStorage.setItem("intro", "true");
+
     const timeout = setTimeout(() => {
       setState(false);
     }, tiempo);

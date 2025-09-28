@@ -24,6 +24,17 @@ export const NavLinks = ({ links }: Props) => {
               {link}
             </button>
           );
+        }
+        if (link === "Inicio") {
+          return (
+            <Link
+              key={index}
+              to={"/"}
+              className=" text-md  hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito"
+            >
+              {link}
+            </Link>
+          );
         } else {
           return (
             <Link

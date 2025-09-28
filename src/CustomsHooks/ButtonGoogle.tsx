@@ -43,7 +43,7 @@ export default function ButtonGoogle({ accionquery }: props) {
                 const data = await res.json();
                 console.log(data);
                 setSesion(data);
-                nav("/Inicio", { replace: true });
+                nav("/", { replace: true });
               } else {
                 setSesion(undefined);
                 console.error("Token inválido o error en backend");

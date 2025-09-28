@@ -5,8 +5,7 @@ export default function Registro() {
   return (
     <Auth
       endpoint={`${turismoAPiFecth}auth/registrar`}
-      title="Crea una cuenta"
-      textBtn="Continuar con correo electronico"
+      textBtn="Registrate"
       inputNombre={true}
       accionquery="registro"
     ></Auth>

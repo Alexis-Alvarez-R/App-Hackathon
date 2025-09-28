@@ -20,20 +20,24 @@ export default function Router() {
     <>
       {is404 || <HeaderHome />}
       <Routes>
-        <Route path="/Inicio" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="/Inicio-sesion" element={<InicioSesion />} />
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Aviturismo" element={<AviturismoPage />} />
         <Route element={<PrivateRouter />}>
           <Route path="/Juegos">
             <Route index element={<Juegos></Juegos>}></Route>
-            <Route path="ScrambleWords" element={<PalabrasGame></PalabrasGame>}></Route>
+            <Route
+              path="ScrambleWords"
+              element={<PalabrasGame></PalabrasGame>}
+            ></Route>
             <Route path="*" element={<Navigate to={"/404"} />} />
           </Route>
         </Route>
         <Route path="/Aves-Detalles" element={<AvesDetalles />} />
         <Route path="/Detallelugar/:lugar" element={<DetalleLugar />} />
-        <Route index element={<Navigate to="/Inicio"></Navigate>}></Route> <Route path="/Perfil" element={<Perfil />} />
+        <Route index element={<Navigate to="/Inicio"></Navigate>}></Route>{" "}
+        <Route path="/Perfil" element={<Perfil />} />
         {/*fixed el not found*/}
         <Route path="/404" element={<NotFound />}></Route>
         <Route path="*" element={<Navigate to={"/404"}></Navigate>} />

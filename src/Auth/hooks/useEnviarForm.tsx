@@ -33,7 +33,8 @@ export default function useEnviarForm(endpoint: string) {
           return;
         }
         setSesion(data);
-        nav("/Inicio", { replace: true });
+        console.log("yo redirije");
+        nav("/", { replace: true });
       } else {
         const data = await fetching.json();
         setSesion(undefined);

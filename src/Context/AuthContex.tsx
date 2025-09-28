@@ -19,12 +19,9 @@ export function SesionProvider({ children }: prop) {
   useEffect(() => {
     async function verificarSesion() {
       try {
-        const fetching = await fetch(
-          `${turismoAPiFecth}}auth/verificarsesion`,
-          {
-            credentials: "include",
-          }
-        );
+        const fetching = await fetch(`${turismoAPiFecth}auth/verificarsesion`, {
+          credentials: "include",
+        });
         if (fetching.ok) {
           const data: Sesion = await fetching.json();
           setSesion({

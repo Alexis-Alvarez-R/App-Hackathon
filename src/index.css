@@ -181,3 +181,18 @@ details[open] summary {
     opacity: 0;
   }
 }
+
+#animacionEntradaLetraLogo {
+  animation: animacionEntradaLetraLogo 1s ease-in-out forwards;
+}
+
+@keyframes animacionEntradaLetraLogo {
+  from {
+    filter: blur(10px);
+    transform: translateY(-100vh);
+  }
+  to {
+    filter: blur(0);
+    transform: translateY(0%);
+  }
+}

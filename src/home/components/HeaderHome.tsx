@@ -16,10 +16,10 @@ export const HeaderHome = () => {
   }
 
   return (
-    <header className="w-full flex justify-between gap-4  bg-black text-white p-3 mb-4">
-      <figure className="flex justify-start items-center w-[20%]  ">
+    <header className="relative z-50 w-full flex justify-between gap-4  bg-black text-white p-3 mb-4">
+      <Link to={"/"} className="flex justify-start items-center w-[20%]">
         <img src={logo} className="w-full h-[50px] object-contain "></img>
-      </figure>
+      </Link>
       <nav className="hidden desktop:flex justify-center items-center gap-2   px-5 py-2 w-[50%] ">
         <NavLinks links={links}></NavLinks>
       </nav>

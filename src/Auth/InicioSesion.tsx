@@ -6,13 +6,12 @@ export default function InicioSesion() {
   return (
     <Auth
       endpoint={`${turismoAPiFecth}auth/iniciarsesion`}
-      title="Inciar sesion"
-      textBtn="Siguiente"
+      textBtn="Iniciar sesion"
       accionquery="iniciosesion"
     >
       <div className="p-4 [font-size:16px] mb:p-6 mb:[font-size:20px]">
         No tienes cuenta?
-        <Link to={"/Registro"} className="text-blue-400">
+        <Link to={"/Registro"} className="text-darkGreen">
           Crea una
         </Link>
       </div>
