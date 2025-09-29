@@ -196,3 +196,19 @@ details[open] summary {
     transform: translateY(0%);
   }
 }
+
+#notificacion {
+  animation: animacionNotificacion 5s ease-in-out forwards;
+}
+@keyframes animacionNotificacion {
+  0% {
+    transform: translate(-50%, -100vh);
+  }
+  20%,
+  80% {
+    transform: translate(-50%, 0%);
+  }
+  100% {
+    transform: translate(-50%, -100vh);
+  }
+}

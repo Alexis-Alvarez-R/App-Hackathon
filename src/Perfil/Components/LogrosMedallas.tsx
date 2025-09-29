@@ -13,7 +13,9 @@ export default function LogrosMedallas() {
     if (!$detailLogros.current || !$divLogros.current) return;
     console.log("se hizo");
     $divLogros.current.classList.remove("bg-amarillo", "bg-naranja");
-    const cambiocolor = $detailLogros.current.hasAttribute("open") ? "bg-amarillo" : "bg-naranja";
+    const cambiocolor = $detailLogros.current.hasAttribute("open")
+      ? "bg-amarillo"
+      : "bg-naranja";
     $divLogros.current.classList.add(cambiocolor);
   }
   return (
@@ -23,12 +25,19 @@ export default function LogrosMedallas() {
       className="bg-amarillo transition-all duration-500 ease-in flex items-center min-h-max rounded-2xl relative overflow-hidden [box-shadow:2px_3px_8px_3px_#242424]"
     >
       <div className="linea-animada"></div>
-      <details ref={$detailLogros} className="flex flex-col justify-center w-full desktop:hidden">
+      <details
+        ref={$detailLogros}
+        className="flex flex-col justify-center w-full desktop:hidden"
+      >
         <summary
           onClick={toggleBg}
           className="p-2.5 flex items-center gap-1.5 [border:solid_1px_black] rounded-[12px] desktop:justify-center"
         >
-          <img className="w-[8%] tablet:w-[10%] desktop:w-[6%]" src={logroicon} alt="" />
+          <img
+            className="w-[8%] tablet:w-[10%] desktop:w-[6%]"
+            src={logroicon}
+            alt=""
+          />
           <span className="tablet:text-[20px]">Logros y medallas</span>
         </summary>
         <div className="flex flex-col gap-2 desktop:grid desktop:[grid-template-columns:repeat(auto-fit,minmax(280px,1fr))] desktop:gap-4 desktop:pl-3 pr-3">
@@ -57,7 +66,11 @@ export default function LogrosMedallas() {
 
       <div className="hidden flex-col justify-center w-full desktop:flex">
         <div className="p-2.5 flex items-center gap-1.5 [border:solid_1px_black] rounded-[12px] desktop:justify-center">
-          <img className="w-[8%] tablet:w-[10%] desktop:w-[6%]" src={logroicon} alt="" />
+          <img
+            className="w-[8%] tablet:w-[10%] desktop:w-[6%]"
+            src={logroicon}
+            alt=""
+          />
           <span className="tablet:text-[20px]">Logros y medallas</span>
         </div>
         <div className="flex flex-col gap-2 desktop:grid desktop:[grid-template-columns:repeat(auto-fit,minmax(280px,1fr))] desktop:gap-4 desktop:p-2">

@@ -4,7 +4,10 @@ import { useSesionContex } from "../../Context/AuthContex";
 
 export default function useEnviarForm(endpoint: string) {
   const nav = useNavigate();
-  const [notification, setNotification] = useState<string | null>(null);
+  const [notification, setNotification] = useState<{
+    mensaje: string;
+    isValido: boolean;
+  } | null>(null);
   const { setSesion } = useSesionContex();
 
   const enviar = async (
@@ -29,20 +32,26 @@ export default function useEnviarForm(endpoint: string) {
         const data = await fetching.json();
         console.log(accion);
         if (accion == "registro") {
-          setNotification(data.mensaje);
+          setNotification({ mensaje: data.mensaje, isValido: true });
           return;
         }
+        console.log(data);
         setSesion(data);
-        console.log("yo redirije");
         nav("/", { replace: true });
       } else {
         const data = await fetching.json();
         setSesion(undefined);
-        setNotification(data.mensaje); // <-- guardamos el mensaje de error
+        setNotification({ mensaje: data.mensaje, isValido: false }); // <-- guardamos el mensaje de error
+        console.log(data);
       }
     } catch (error) {
       setSesion(undefined);
-      setNotification("Error de red. Intenta de nuevo");
+      setNotification({
+        mensaje: "Error de red. Intenta de nuevo",
+        isValido: false,
+      });
+      console.log(error);
+      alert("no se puede");
     }
   };
 

@@ -5,12 +5,14 @@ import { useSesionContex } from "../../Context/AuthContex";
 
 import { MenuDesplegable } from "./MenuDesplegable";
 import logo from "../../assets/img/logo-letra.png";
+import perfil from "../../assets/icons/perfil.png";
 
 const links = ["Inicio", "Aviturismo", "Explora", "Juegos", "Contacto"];
 
 export const HeaderHome = () => {
   obtenerAve();
   const { sesion } = useSesionContex();
+  const picture = sesion?.picture ?? perfil;
   {
     console.log("HeaderHome render, sesion:", sesion);
   }
@@ -28,14 +30,14 @@ export const HeaderHome = () => {
       {sesion ? (
         <Link
           to={"/Perfil"}
-          className=" hidden desktop:block mr-10 bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform "
+          className="w-[5%] hidden desktop:block mr-10 bg-green-800 p-1 rounded-full hover:bg-green-700 active:scale-98  transition-transform overflow-hidden"
         >
-          perfil
+          <img src={picture} alt="" className="w-full rounded-full" />
         </Link>
       ) : (
         <Link
           to={"/Inicio-sesion"}
-          className=" hidden desktop:block mr-10  bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform "
+          className=" hidden desktop:flex items-center mr-10  bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform"
         >
           Inicie sesion
         </Link>

@@ -29,6 +29,7 @@ export default function Auth({
 }: props) {
   const refForm = useRef<HTMLFormElement>(null);
   const { enviar, notification, setNotification } = useEnviarForm(endpoint);
+  console.log(notification);
 
   return (
     <>
@@ -72,7 +73,10 @@ export default function Auth({
             </button>
           </form>
 
-          <ButtonGoogle accionquery={accionquery} />
+          <ButtonGoogle
+            accionquery={accionquery}
+            setNotification={setNotification}
+          />
 
           {children}
         </div>
@@ -89,13 +93,15 @@ export default function Auth({
         </div>
 
         {/* Renderizamos la notificación si hay mensaje */}
-        {notification && (
-          <Notification
-            mensaje={notification}
-            onClose={() => setNotification(null)}
-          />
-        )}
       </div>
+      {notification && (
+        <Notification
+          key={Date.now()}
+          isValido={notification.isValido}
+          mensaje={notification.mensaje}
+          onClose={() => setNotification(null)}
+        />
+      )}
     </>
   );
 }

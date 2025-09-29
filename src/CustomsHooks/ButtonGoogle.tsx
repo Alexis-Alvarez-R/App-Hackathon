@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import type { typeActionQuery } from "../Auth/Auth";
-import { useNavigate } from "react-router-dom";
+import { data, useNavigate } from "react-router-dom";
 import { useSesionContex } from "../Context/AuthContex";
 import { turismoAPiFecth } from "../apis/turismo.api";
 
@@ -12,10 +12,13 @@ declare global {
 
 type props = {
   accionquery: typeActionQuery;
+  setNotification: React.Dispatch<
+    React.SetStateAction<{ mensaje: string; isValido: boolean } | null>
+  >;
   onSuccess?: (credential: string) => void;
 };
 
-export default function ButtonGoogle({ accionquery }: props) {
+export default function ButtonGoogle({ accionquery, setNotification }: props) {
   const buttonRef = useRef<HTMLDivElement>(null);
   const { setSesion } = useSesionContex();
   const nav = useNavigate();
@@ -38,18 +41,23 @@ export default function ButtonGoogle({ accionquery }: props) {
                 }
               );
 
+              const data = await res.json();
               if (res.ok) {
                 console.log("Login exitoso");
-                const data = await res.json();
                 console.log(data);
                 setSesion(data);
                 nav("/", { replace: true });
               } else {
                 setSesion(undefined);
+                setNotification({ mensaje: data.mensaje, isValido: false });
                 console.error("Token inválido o error en backend");
               }
             } catch (error) {
               setSesion(undefined);
+              setNotification({
+                mensaje: "Upps ocurrio un error",
+                isValido: false,
+              });
             }
           },
         });
