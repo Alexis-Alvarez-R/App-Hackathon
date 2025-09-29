@@ -16,7 +16,7 @@ export const HeaderHome = () => {
   }
 
   return (
-    <header className="relative z-50 w-full flex justify-between gap-4  bg-black text-white p-3 mb-4">
+    <header className="relative z-50 w-full flex justify-between gap-4  bg-black text-white p-3 ">
       <Link to={"/"} className="flex justify-start items-center w-[20%]">
         <img src={logo} className="w-full h-[50px] object-contain "></img>
       </Link>

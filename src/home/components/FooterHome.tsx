@@ -1,10 +1,15 @@
+import { Link } from "react-router-dom";
+
+import { NavLinks } from "./NavLinks";
+
 import facebookIcon from "../../assets/icons/facebook-tag.svg";
 import instagramIcon from "../../assets/icons/instagram.svg";
 import tiktokIcon from "../../assets/icons/tiktok.svg";
 import whatsappIcon from "../../assets/icons/whatsapp.svg";
 import arrowUp from "../../assets/icons/arrow-up.svg";
-import { NavLinks } from "./NavLinks";
-import { Link } from "react-router-dom";
+import misionIcon from "../../assets/icons/historic-shield.svg";
+import visionIcon from "../../assets/icons/binocular.svg";
+import logo from "../../assets/img/logo-letra.png";
 
 const links = ["Inicio", "Aviturismo", "Explora", "Juegos", "Contacto"];
 
@@ -20,9 +25,9 @@ export const FooterHome = () => {
     <>
       <footer className="w-full flex-col  bg-black flex desktop:flex-row gap-4 p-2 text-white ">
         <section className=" w-full py-2 px-4 desktop:ml-8 mt-4 mb-4 flex flex-col gap-5 desktop:w-[50%] ">
-          <h1 className="font-nunito font-bold text-3xl text-lightGreen ">RumboNica</h1>
+          <img className="w-[70%]" src={logo}></img>
 
-          <p className="w-full deskto:w-[70%] font-nunito">
+          <p className="w-full deskto:w-[70%] font-nunito text-justify">
             Somos una plataforma digital que inspira a descubrir la cultura y naturaleza de Nicaragua. A través de
             dinámicas de exploración y juego, motivamos a visitar destinos únicos, resaltando también la riqueza de
             nuestras aves, áreas protegidas y belleza del país.
@@ -74,16 +79,33 @@ export const FooterHome = () => {
           </button>
         </section>
 
-        <section className="flex flex-col gap-3 w-full desktop:w-[25%] mt-4 ml-4">
-          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">Enlaces Rapidos</h2>
-          <NavLinks links={links}></NavLinks>
+        <section className="flex flex-col gap-4 w-full desktop:w-[30%] mt-4 ml-4 mb-4">
+          <hr />
+          <div className="flex justify-start items-center gap-4 w-full">
+            <img className="w-[50px] h-[50px] object-cover" src={visionIcon} alt="" />
+            <h2 className="text-lightGreen text-2xl text-center font-nunito font-bold "> Visión</h2>
+          </div>
+          <p className="font-nunito p-1">
+            Ser la plataforma digital lider en Turismo en Nicaragua, reconocida por la innovacion y el impulso de
+            crecimiento de empresas y guias locales, fomentando un turismo prospero y respetuoso con el medio ambiente y
+            la cultura.
+          </p>
+          <hr />
+
+          <div className="flex justify-start items-center w-full gap-4">
+            <img className="w-[50px] h-[50px] object-cover" src={misionIcon} alt="" />
+            <h2 className="text-lightGreen text-2xl text-center font-nunito font-bold">Misión</h2>
+          </div>
+          <p className="font-nunito p-1">
+            Conectar a los turistas con experiencias autenticas y sostenibles en Nicargua al mismo tiempo que impulsamos
+            a empresas y guias locales a crecer y fortalecer el turismo responsable.
+          </p>
+          <hr />
         </section>
 
-        <section className="flex flex-col gap-4 w-full desktop:w-[25%] mt-4 ml-4 mb-4">
-          <h2 className="text-lightGreen text-2xl font-nunito font-bold">Legal</h2>
-          <h3 className="font-nunito">Politicas de Privacidad</h3>
-          <h3 className="font-nunito">Terminos y condiciones</h3>
-          <h3 className="font-nunito">Todos los Derechos Reservados</h3>
+        <section className="flex flex-col justify-start items-start gap-3 w-full desktop:w-[20%] mt-6 ml-4">
+          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">Enlaces Rapidos</h2>
+          <NavLinks links={links}></NavLinks>
         </section>
       </footer>
       <div className=" w-full h-[10px] bg-darkGreen"></div>

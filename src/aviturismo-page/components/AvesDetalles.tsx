@@ -78,11 +78,11 @@ export const AvesDetalles = () => {
         </p>
       </section>
 
-      <section className="w-screen flex flex-col justify-center items-center  bg-gradient-to-r  from-lightGray  to-darkGreen p-4 mb-10">
+      <section className="w-screen flex flex-col justify-center items-center  bg-gradient-to-r  from-lightGray  to-darkGreen p-4 ">
         <h1 className="w-full desktop:w-[50%] p-3 text-center text-3xl  text-black font-nunito font-bold bg-lightGray rounded-2xl mb-5 ">
           MAPA DE DISTRIBUCION
         </h1>
-        <div className=" w-full px-4 desktop:w-[70%] flex justify-center items-center ">
+        <div className=" w-full  desktop:w-[70%] flex justify-center items-center ">
           {/* Usa el nuevo componente de mapa */}
           <AvesMapa conteoAvistamientos={conteoAvistamientos} />
         </div>

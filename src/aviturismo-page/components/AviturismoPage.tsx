@@ -33,7 +33,7 @@ export const AviturismoPage = () => {
   };
 
   return (
-    <div className="flex  flex-col justify-center items-center mb-6">
+    <div className="flex  flex-col justify-center items-center ">
       <AvesFiltro filtros={filtros} onFiltroClick={handleFiltroClick}></AvesFiltro>
       {isLoading ? (
         <div className="text-center py-10">

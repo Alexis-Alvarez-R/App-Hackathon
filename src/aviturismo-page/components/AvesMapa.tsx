@@ -55,7 +55,7 @@ const AvesMapa: React.FC<Props> = ({ conteoAvistamientos }) => {
   return (
     <MapContainer
       center={nicaraguaCenter}
-      zoom={6.7}
+      zoom={6.2}
       minZoom={6}
       maxZoom={10}
       style={{ height: "600px", width: "80%" }}
