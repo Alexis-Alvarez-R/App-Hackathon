@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useAve } from "../hooks/useAve";
 import { AvesFiltro } from "./AvesFiltro";
 import { AvesGrid } from "./AvesGrid";
+
+const preloadCard = 10;
 
 const filtros = [
   { id: 0, nombre: "Todas" },
@@ -15,10 +17,24 @@ const filtros = [
 export const AviturismoPage = () => {
   const { aves, obtenerAves, filtrarAvesPorZona, isLoading } = useAve();
   const [zona, setZona] = useState<number>(0);
+  const [cardsToShow, setCardsToShow] = useState<number>(preloadCard);
 
   useEffect(() => {
     obtenerAves();
   }, []);
+
+  useEffect(() => {
+    setCardsToShow(preloadCard);
+  }, [aves]);
+
+  // Calcula el subconjunto de aves a mostrar ---
+  const visibleAves = useMemo(() => {
+    return aves.slice(0, cardsToShow);
+  }, [aves, cardsToShow]);
+
+  const handleLoadMore = () => {
+    setCardsToShow((prevCardsToShow) => prevCardsToShow + 5);
+  };
 
   const handleFiltroClick = (zonaId: number) => {
     if (zonaId === zona) return;
@@ -32,15 +48,40 @@ export const AviturismoPage = () => {
     }
   };
 
+  // Determina si el botón "Ver Más" debe ser visible
+  const showLoadMoreButton = visibleAves.length > 0 && cardsToShow < aves.length;
+
   return (
-    <div className="flex  flex-col justify-center items-center ">
+    <div className="flex flex-col justify-center items-center">
       <AvesFiltro filtros={filtros} onFiltroClick={handleFiltroClick}></AvesFiltro>
+
       {isLoading ? (
         <div className="text-center py-10">
-          <span className="animate-pulse text-4xl text-darkGreen"> Cargando aves...</span>
+          <span className="animate-pulse text-4xl text-darkGreen">Cargando aves...</span>
         </div>
       ) : (
-        <AvesGrid aves={aves}></AvesGrid>
+        <>
+          <AvesGrid aves={visibleAves}></AvesGrid>
+
+          {showLoadMoreButton && (
+            <button
+              onClick={handleLoadMore}
+              className="my-8 px-6 py-3 text-lg  bg-darkGreen text-white font-bold font-nunito rounded-lg shadow-md hover:opacity-85 transition duration-300 cursor-pointer"
+            >
+              Ver más aves ({aves.length - visibleAves.length} restantes)
+            </button>
+          )}
+
+          {!showLoadMoreButton && visibleAves.length > 0 && (
+            <p className="my-8  text-darkGreen bg-beige p-2 text-2xl font-nunito font-bold">
+              Has llegado al final. ¡Estas son todas las aves!
+            </p>
+          )}
+
+          {visibleAves.length === 0 && !isLoading && (
+            <p className="my-8 text-xl text-gray-600">No se encontraron aves para esta zona.</p>
+          )}
+        </>
       )}
     </div>
   );

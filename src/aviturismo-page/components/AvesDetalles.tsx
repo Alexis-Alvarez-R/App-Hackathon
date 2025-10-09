@@ -2,10 +2,19 @@ import { useLocation } from "react-router-dom";
 import type { Ave } from "../interface/Ave";
 import { EstadoAve } from "./EstadoAve";
 import AvesMapa from "./AvesMapa";
+import { useAve } from "../hooks/useAve";
+import { useEffect } from "react";
+import { ReservasGrid } from "./ReservasGrid";
 
 export const AvesDetalles = () => {
   const location = useLocation();
   const ave = location.state as Ave;
+
+  const { reservas, obtenerReservas } = useAve();
+
+  useEffect(() => {
+    obtenerReservas(ave.ave_id);
+  }, []);
 
   //Data Fake
 
@@ -86,6 +95,13 @@ export const AvesDetalles = () => {
           {/* Usa el nuevo componente de mapa */}
           <AvesMapa conteoAvistamientos={conteoAvistamientos} />
         </div>
+      </section>
+
+      <section className="w-full">
+        <h2 className="capitalize w-full text-center text-2xl border-3 p-3 font-nunito font-bold ">
+          Lugares donde puedes encontrar a este especimen
+        </h2>
+        <ReservasGrid reservasNaturales={reservas}></ReservasGrid>
       </section>
     </div>
   );
