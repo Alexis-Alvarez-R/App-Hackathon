@@ -4,7 +4,6 @@ import useGetComentarios from "./hooks/useGetComentarios";
 import { useContext } from "react";
 import { lugarContext } from "../Context/LugarContext";
 import { useSesionContex } from "../../../Context/AuthContex";
-import { build } from "vite";
 
 export default function Comentarios() {
   const id_lugar = useContext(lugarContext) as number;

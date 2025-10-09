@@ -28,6 +28,7 @@ export function SesionProvider({ children }: prop) {
             name: data.name,
             email: data.email,
             picture: data.picture,
+            id_usuario: data.id_usuario,
           });
 
           console.log("si tod bien");
