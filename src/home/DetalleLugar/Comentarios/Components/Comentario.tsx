@@ -74,9 +74,8 @@ export default function Comentario({
   }
 
   async function enviarComentarioEditado() {
-    console.log("aca");
-    if (!divEditable.current) return;
-    const contenidoNuevo = divEditable.current.textContent;
+    const contenidoNuevo = divEditable.current?.textContent;
+    if (!contenidoNuevo) return;
     if (contenido === contenidoNuevo) return;
 
     const res = await enviarComentario(id_comentario, contenidoNuevo);
