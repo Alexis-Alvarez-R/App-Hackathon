@@ -70,15 +70,20 @@ export default function Comentario({
       return;
     }
     divEditable.current.contentEditable = "false";
-    setEditarEstado(false);
+    setTimeout(() => {
+      setEditarEstado(false);
+    }, 700);
   }
 
   async function enviarComentarioEditado() {
+    if (!divEditable.current) return;
     const contenidoNuevo = divEditable.current?.textContent;
     if (!contenidoNuevo) return;
     if (contenido === contenidoNuevo) return;
 
     const res = await enviarComentario(id_comentario, contenidoNuevo);
+
+    editarComentarioDesactivado();
 
     //SI el comentario se actualiza o no sinceramente podria poner
     //una notificacion pero por ahora se ve mejor asi
