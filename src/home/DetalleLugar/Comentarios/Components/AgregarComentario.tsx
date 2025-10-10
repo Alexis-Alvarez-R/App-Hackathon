@@ -61,6 +61,10 @@ export default function AgregarComentario({ setComentariosPublicados }: prop) {
     console.log(res);
     console.log("nuevo comentario en el set");
     setComentariosPublicados((prev) => [res, ...(prev || [])]);
+
+    setPuntuacion(0);
+    setComentario("");
+    refTextArea.current.blur();
   }
 
   return (

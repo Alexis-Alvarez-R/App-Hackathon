@@ -1,4 +1,8 @@
+import { useRef, useState } from "react";
 import Perfil from "../../../../assets/icons/perfil.png";
+import useEnviarComentarioEditado from "../hooks/useEnviarComentarioEditado";
+import useEliminarComentario from "../hooks/useEliminarComentario";
+import { type iComentarioPublicacion } from "../interfaces/Comentarios";
 
 interface prop {
   picture: string;
@@ -7,6 +11,10 @@ interface prop {
   puntuacion: number;
   contenido: string;
   esComentarioUsuario?: boolean;
+  id_comentario: number;
+  setComentariosPublicados: React.Dispatch<
+    React.SetStateAction<iComentarioPublicacion[]>
+  >;
 }
 
 export default function Comentario({
@@ -16,7 +24,14 @@ export default function Comentario({
   puntuacion,
   contenido,
   esComentarioUsuario = false,
+  id_comentario,
+  setComentariosPublicados,
 }: prop) {
+  const divEditable = useRef<HTMLDivElement | null>(null);
+  const [editarEstado, setEditarEstado] = useState<boolean>(false);
+  const { enviarComentario } = useEnviarComentarioEditado();
+  const deleteComentario = useEliminarComentario();
+
   if (!picture) {
     picture = Perfil;
   }
@@ -41,11 +56,58 @@ export default function Comentario({
     return `Hace ${años} año${años > 1 ? "s" : ""}`;
   }
 
+  function editarComentario() {
+    if (!divEditable.current) {
+      return;
+    }
+    setEditarEstado(true);
+    divEditable.current.contentEditable = "true";
+    divEditable.current.focus();
+  }
+
+  function editarComentarioDesactivado() {
+    if (!divEditable.current) {
+      return;
+    }
+    divEditable.current.contentEditable = "false";
+    setEditarEstado(false);
+  }
+
+  async function enviarComentarioEditado() {
+    console.log("aca");
+    if (!divEditable.current) return;
+    const contenidoNuevo = divEditable.current.textContent;
+    if (contenido === contenidoNuevo) return;
+
+    const res = await enviarComentario(id_comentario, contenidoNuevo);
+
+    //SI el comentario se actualiza o no sinceramente podria poner
+    //una notificacion pero por ahora se ve mejor asi
+    // if (!res) {
+    //   alert("Comentario no actualizado");
+    // }
+    // alert("comentario actualizado");
+  }
+
+  async function eliminarComentario() {
+    const res = await deleteComentario(id_comentario);
+    if (!res) {
+      return;
+    }
+    setComentariosPublicados((prev) => {
+      const comentariosPublicadosActualizado = prev.filter(
+        (comentario) => comentario.id_comentario !== id_comentario
+      );
+      return comentariosPublicadosActualizado;
+    });
+  }
+
   const estrellasArr = [1, 2, 3, 4, 5];
+
   return (
     <div
       id="Comentario"
-      className="w-full flex flex-col gap-2 p-4 pt-2 pb-2 bg-verdeGris rounded-2xl [box-shadow:0px_0px_5px_1px_black] hover:transform-[translateX(6%)] hover:[filter:saturate(80%)] transition-all duration-200 ease-out tablet:gap-3.5 tablet:p-8 tablet:pt-4 tablet:pb-4 tablet:hover:transform-[translateX(10%)]"
+      className="w-full flex flex-col gap-2 p-4 pt-2 pb-2 bg-verdeGris rounded-2xl [box-shadow:0px_0px_5px_1px_black] hover:transform-[translateX(6%)] hover:[filter:saturate(80%)] transition-all duration-200 ease-out tablet:gap-3.5 tablet:p-8 tablet:pt-4 tablet:pb-4 tablet:hover:transform-[translateX(3%)]"
     >
       <div
         id="comentario_header"
@@ -59,10 +121,12 @@ export default function Comentario({
             referrerPolicy="no-referrer"
           />
         </figure>
-        <p className="flex items-center font-semibold">
+        <p className="flex items-center font-semibold font-nunito text-[14px] tablet:text-[20px]">
           {`${usuarioNombre.slice(0, 12)}...`}
         </p>
-        <p className="flex items-center">{tiempoRelativo(`${fecha}z`)}</p>
+        <p className="flex items-center font-nunito text-[12px] tablet:text-[16px]">
+          {tiempoRelativo(`${fecha}z`)}
+        </p>
         <div className="hidden tablet:flex items-center absolute right-0 ">
           {estrellasArr.map((estrella) => {
             return (
@@ -92,15 +156,37 @@ export default function Comentario({
           );
         })}
       </div>
-      <div id="comentario_contenido">{contenido}</div>
+      <div
+        id="comentario_contenido"
+        ref={divEditable}
+        onBlur={editarComentarioDesactivado}
+        className="text-[12px] font-nunito break-words whitespace-pre-wrap tablet:text-[16px]"
+      >
+        {contenido}
+      </div>
       {esComentarioUsuario ? (
-        <nav className="flex gap-2 self-end">
-          <button className="p-1 pl-2 pr-2 rounded-2xl font-semibold hover:bg-gray-400 hover:text-white transition-colors duration-200 ease-out cursor-pointer">
+        <nav className="flex gap-2 self-end mt-[-10px]">
+          <button
+            onClick={eliminarComentario}
+            className="p-1 pl-2 pr-2 rounded-2xl font-semibold hover:bg-gray-400 hover:text-white transition-colors duration-200 ease-out cursor-pointer"
+          >
             Eliminar
           </button>
-          <button className="p-1 pl-2 pr-2 rounded-2xl bg-skyBlue text-white font-semibold hover:bg-regularBlue transition-colors duration-200 ease-out cursor-pointer">
-            Editar
-          </button>
+          {editarEstado ? (
+            <button
+              onMouseDown={enviarComentarioEditado}
+              className="p-1 pl-2 pr-2 rounded-2xl bg-skyBlue text-white font-semibold hover:bg-regularBlue transition-colors duration-200 ease-out cursor-pointer"
+            >
+              Guardar
+            </button>
+          ) : (
+            <button
+              onClick={editarComentario}
+              className="p-1 pl-2 pr-2 rounded-2xl bg-skyBlue text-white font-semibold hover:bg-regularBlue transition-colors duration-200 ease-out cursor-pointer"
+            >
+              Editar
+            </button>
+          )}
         </nav>
       ) : null}
     </div>

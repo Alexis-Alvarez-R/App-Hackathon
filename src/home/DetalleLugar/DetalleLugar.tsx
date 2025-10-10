@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
-import Slider from "./Components/Slider";
+import Slider from "../../Components/Slider";
 import ave from "../../assets/icons/ave.png";
+import useImagenesLugar from "./hooks/useImagenesLugar";
 
 import { lugarContext } from "./Context/LugarContext";
 import Comentarios from "./Comentarios/Comentarios";
@@ -8,12 +9,17 @@ import Comentarios from "./Comentarios/Comentarios";
 export default function DetalleLugar() {
   const location = useLocation();
   const { lugar } = location.state;
+  const imagenesLugar = useImagenesLugar(lugar.id) as string[];
   console.log(lugar);
 
   return (
     <lugarContext.Provider value={lugar.id}>
       <div className="p-4 min-h-dvh flex flex-col gap-8 tablet:p-10">
-        <Slider id={lugar.id} nombre={lugar.nombre} imgDefault={lugar.img} />
+        <Slider
+          titulo={lugar.nombre}
+          imgDefault={lugar.img}
+          imagenes={imagenesLugar}
+        />
         <div className="w-full h-[100%] grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))]">
           <div className="card">
             <div className="card-divpath"></div>

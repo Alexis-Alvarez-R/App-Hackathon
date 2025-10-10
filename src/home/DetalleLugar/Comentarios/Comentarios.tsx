@@ -42,6 +42,8 @@ export default function Comentarios() {
                 puntuacion={comentario.puntuacion}
                 contenido={comentario.contenido}
                 esComentarioUsuario={esComentariousuario}
+                id_comentario={comentario.id_comentario}
+                setComentariosPublicados={setComentariosPublicados}
               />
             );
           })
