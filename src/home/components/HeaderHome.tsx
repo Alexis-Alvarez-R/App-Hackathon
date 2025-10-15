@@ -7,7 +7,7 @@ import { MenuDesplegable } from "./MenuDesplegable";
 import logo from "../../assets/img/logo-letra.png";
 import perfil from "../../assets/icons/perfil.png";
 
-const links = ["Inicio", "Aviturismo", "Explora", "Juegos", "Contacto"];
+const links = ["Inicio", "Explora", "Juegos", "Contacto"];
 
 export const HeaderHome = () => {
   obtenerAve();

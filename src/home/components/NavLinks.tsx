@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
+import { Dropdown } from "../../Components/DropDown";
 
 interface Props {
   links: string[];
   onLinkClick?: () => void;
 }
+
+const categorias = [
+  { label: "Aviturismo", link: "/aviturismo" },
+  { label: "AguaTurismo", link: "/notfound" },
+  { label: "FuegoTurismo", link: "/notfound" },
+];
+
 export const NavLinks = ({ links, onLinkClick }: Props) => {
   const handleScrollToBottom = () => {
     window.scrollTo({
@@ -50,6 +58,7 @@ export const NavLinks = ({ links, onLinkClick }: Props) => {
           );
         }
       })}
+      <Dropdown title="Vive" items={categorias}></Dropdown>
     </>
   );
 };
