@@ -15,7 +15,7 @@ export default function Comentarios() {
   return (
     <div
       id="Box_Comentarios"
-      className="w-full p-3 flex flex-col justify-center gap-4 items-center [border:solid_black_2px] rounded-[12px] tablet:p-6"
+      className="w-full p-3 flex flex-col justify-center gap-4 items-center [box-shadow:1px_2px_3px_1px_black] rounded-[12px] tablet:p-6"
     >
       {sesion ? (
         <AgregarComentario

@@ -215,3 +215,33 @@ details[open] summary {
     transform: translate(-50%, -100vh);
   }
 }
+
+.animacion-entrada-guias {
+  animation: animacion-entrada-guias 1s ease forwards;
+}
+
+@keyframes animacion-entrada-guias {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animacion-salida-guias {
+  animation: animacion-salida-guias 1s ease forwards;
+}
+
+@keyframes animacion-salida-guias {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+#vistaRef {
+  transform: translateX(0px);
+}

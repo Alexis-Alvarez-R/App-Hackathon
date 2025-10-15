@@ -13,6 +13,8 @@ import DetalleLugar from "../home/DetalleLugar/DetalleLugar";
 import { NotFound } from "./components/NotFound";
 import { PalabrasGame } from "../Juegos/Components/PalabrasGame";
 
+import ConexionLocal from "../home/DetalleLugar/ConexionLocal/ConexionLocal";
+
 export default function Router() {
   const ruta = useLocation();
   const is404 = ruta.pathname == "/404";
@@ -41,6 +43,7 @@ export default function Router() {
         {/*fixed el not found*/}
         <Route path="/404" element={<NotFound />}></Route>
         <Route path="*" element={<Navigate to={"/404"}></Navigate>} />
+        <Route path="/Conexionlocal" element={<ConexionLocal />} />
       </Routes>
       {is404 || <FooterHome />}
     </>

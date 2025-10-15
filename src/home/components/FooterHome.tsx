@@ -28,15 +28,21 @@ export const FooterHome = () => {
           <img className="w-[70%]" src={logo}></img>
 
           <p className="w-full deskto:w-[70%] font-nunito text-justify">
-            Somos una plataforma digital que inspira a descubrir la cultura y naturaleza de Nicaragua. A través de
-            dinámicas de exploración y juego, motivamos a visitar destinos únicos, resaltando también la riqueza de
-            nuestras aves, áreas protegidas y belleza del país.
+            Somos una plataforma digital que inspira a descubrir la cultura y
+            naturaleza de Nicaragua. A través de dinámicas de exploración y
+            juego, motivamos a visitar destinos únicos, resaltando también la
+            riqueza de nuestras aves, áreas protegidas y belleza del país.
           </p>
 
-          <h2 className="font-nunito font-bold text-2xl text-lightGreen">Contactanos en:</h2>
+          <h2 className="font-nunito font-bold text-2xl text-lightGreen">
+            Contactanos en:
+          </h2>
 
           <div className="flex justify-start items-center gap-4  p-3">
-            <a href="https://www.facebook.com/profile.php?id=61581291989568" target="_blank">
+            <a
+              href="https://www.facebook.com/profile.php?id=61581291989568"
+              target="_blank"
+            >
               <img
                 className="w-[42px] h-[42px] object-contain hover:scale-120 transition-transform ease-in-out duration-300 "
                 src={facebookIcon}
@@ -44,7 +50,10 @@ export const FooterHome = () => {
               />
             </a>
 
-            <a href="https://www.instagram.com/rumbo_nica505?igsh=MXRiYWp5N3pkeHRvbg==" target="_blank">
+            <a
+              href="https://www.instagram.com/rumbo_nica505?igsh=MXRiYWp5N3pkeHRvbg=="
+              target="_blank"
+            >
               <img
                 className="w-[42px] h-[42px] object-contain hover:scale-120 transition-transform ease-in-out duration-300 "
                 src={instagramIcon}
@@ -79,32 +88,49 @@ export const FooterHome = () => {
           </button>
         </section>
 
-        <section className="flex flex-col gap-4 w-full desktop:w-[30%] mt-4 ml-4 mb-4">
+        <section className="flex flex-col gap-4 w-full py-2 px-4 desktop:w-[30%] mt-4 mb-4">
           <hr />
           <div className="flex justify-start items-center gap-4 w-full">
-            <img className="w-[50px] h-[50px] object-cover" src={visionIcon} alt="" />
-            <h2 className="text-lightGreen text-2xl text-center font-nunito font-bold "> Visión</h2>
+            <img
+              className="w-[50px] h-[50px] object-cover"
+              src={visionIcon}
+              alt=""
+            />
+            <h2 className="text-lightGreen text-2xl text-center font-nunito font-bold ">
+              {" "}
+              Visión
+            </h2>
           </div>
           <p className="font-nunito p-1">
-            Ser la plataforma digital lider en Turismo en Nicaragua, reconocida por la innovacion y el impulso de
-            crecimiento de empresas y guias locales, fomentando un turismo prospero y respetuoso con el medio ambiente y
-            la cultura.
+            Ser la plataforma digital lider en Turismo en Nicaragua, reconocida
+            por la innovacion y el impulso de crecimiento de empresas y guias
+            locales, fomentando un turismo prospero y respetuoso con el medio
+            ambiente y la cultura.
           </p>
           <hr />
 
           <div className="flex justify-start items-center w-full gap-4">
-            <img className="w-[50px] h-[50px] object-cover" src={misionIcon} alt="" />
-            <h2 className="text-lightGreen text-2xl text-center font-nunito font-bold">Misión</h2>
+            <img
+              className="w-[50px] h-[50px] object-cover"
+              src={misionIcon}
+              alt=""
+            />
+            <h2 className="text-lightGreen text-2xl text-center font-nunito font-bold">
+              Misión
+            </h2>
           </div>
           <p className="font-nunito p-1">
-            Conectar a los turistas con experiencias autenticas y sostenibles en Nicargua al mismo tiempo que impulsamos
-            a empresas y guias locales a crecer y fortalecer el turismo responsable.
+            Conectar a los turistas con experiencias autenticas y sostenibles en
+            Nicargua al mismo tiempo que impulsamos a empresas y guias locales a
+            crecer y fortalecer el turismo responsable.
           </p>
           <hr />
         </section>
 
-        <section className="flex flex-col justify-start items-start gap-3 w-full desktop:w-[20%] mt-6 ml-4">
-          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">Enlaces Rapidos</h2>
+        <section className="flex flex-col justify-start items-start gap-3 w-full desktop:w-[20%] mt-6 py-2 px-4">
+          <h2 className="text-lightGreen text-2xl font-nunito font-bold ">
+            Enlaces Rapidos
+          </h2>
           <NavLinks links={links}></NavLinks>
         </section>
       </footer>
