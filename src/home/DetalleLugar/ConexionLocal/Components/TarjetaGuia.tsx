@@ -8,7 +8,7 @@ interface props {
   contacto: string;
 }
 
-export default function TarjetaGuia({ nombre, apodo, especialidad }: props) {
+export default function TarjetaGuia({ apodo, especialidad }: props) {
   //En tema diseño No se donde meter el nombreeeeee!!!
   const guiaMensaje = `Hola!! quiero obtener mas información`;
 
