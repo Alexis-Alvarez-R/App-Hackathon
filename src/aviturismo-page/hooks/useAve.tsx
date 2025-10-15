@@ -1,11 +1,12 @@
 import { useState } from "react";
 import type { Ave } from "../interface/Ave";
-import { obtenerAve, obtenerAvesPorZona, obtenerReservasPorAve } from "../service";
+import { obtenerAve, obtenerAvesPorZona, obtenerReservasPorAve, obtenerImgPorAve } from "../service";
 import type { ReservaNatural } from "../interface/ReservaNatural";
 
 export const useAve = () => {
   const [aves, setAves] = useState<Ave[]>([]);
   const [reservas, setReservas] = useState<ReservaNatural[]>([]);
+  const [listUrl, setListUrl] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   //obtener todas las aves
@@ -34,6 +35,18 @@ export const useAve = () => {
     }
   };
 
+  const obtenerImgs = async (aveId: number) => {
+    setIsLoading(true);
+    try {
+      const urls = await obtenerImgPorAve(aveId);
+      setListUrl(urls);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   //obtener reservas  por ave
   const obtenerReservas = async (aveId: number) => {
     setIsLoading(true);
@@ -52,10 +65,12 @@ export const useAve = () => {
     aves,
     isLoading,
     reservas,
+    listUrl,
 
     //metodos
     obtenerAves,
     filtrarAvesPorZona,
     obtenerReservas,
+    obtenerImgs,
   };
 };

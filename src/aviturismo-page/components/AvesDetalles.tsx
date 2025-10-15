@@ -5,15 +5,20 @@ import AvesMapa from "./AvesMapa";
 import { useAve } from "../hooks/useAve";
 import { useEffect } from "react";
 import { ReservasGrid } from "./ReservasGrid";
+import Slider from "../../Components/Slider";
 
 export const AvesDetalles = () => {
   const location = useLocation();
   const ave = location.state as Ave;
 
-  const { reservas, obtenerReservas } = useAve();
+  const { reservas, obtenerReservas, listUrl, obtenerImgs } = useAve();
 
   useEffect(() => {
     obtenerReservas(ave.ave_id);
+  }, []);
+
+  useEffect(() => {
+    obtenerImgs(ave.ave_id);
   }, []);
 
   //Data Fake
@@ -40,7 +45,9 @@ export const AvesDetalles = () => {
 
   return (
     <div>
-      <section className=" flex-col-reverse w-screen desktop:flex-row flex justify-around items-cente bg-gradient-to-r  from-lightGray  to-darkGreen   ">
+      <Slider imgDefault={ave.url_img} imagenes={listUrl}></Slider>
+
+      <section className=" flex-col-reverse w-screen desktop:flex-row flex justify-around items-cente bg-gradient-to-r  from-lightGray  to-darkGreen p-2  ">
         <div className="  w-full desktop:w-[65%]  flex flex-col gap-5 p-3 bg-linear-gradient  from-lightGray  to-darkGreen  ">
           <h1 className="  text-xl font-nunito font-bold desktop:text-3xl  p-2">
             <span className="text-ocean">Nombre Comun: </span>
@@ -56,15 +63,15 @@ export const AvesDetalles = () => {
           </h3>
 
           <div className="flex flex-col-reverse desktop:flex-row justify-around items-center gap-6 p-3  bg-ocean rounded-2xl">
-            <div className="w-full desktop:w-[25%] flex flex-col  p-3 bg-lightGray rounded-2xl hover:scale-105 transition-transform ease-in-out duration-300">
+            <div className="w-full desktop:w-[25%] flex flex-col  p-3 bg-lightGray rounded-2xl hover:scale-102 transition-transform ease-in-out duration-300">
               <p className="text-xl desktop:text-3xl">{ave.tamano}</p>
               <p className="font-bold">Tamaño</p>
             </div>
-            <div className=" w-full desktop:w-[25%] flex flex-col gap-2  p-3 bg-lightGray  rounded-2xl  hover:scale-105 transition-transform ease-in-out duration-300">
+            <div className=" w-full desktop:w-[25%] flex flex-col gap-2  p-3 bg-lightGray  rounded-2xl  hover:scale-102 transition-transform ease-in-out duration-300">
               <p className=" text-xl desktop:text-3xl">{ave.dieta}</p>
               <p className="font-bold">Dieta</p>
             </div>
-            <div className="w-full desktop:w-[50%] flex flex-col gap-3 px-2 py-4 bg-lightGray rounded-2xl hover:scale-105 transition-transform ease-in-out duration-300">
+            <div className="w-full desktop:w-[50%] flex flex-col gap-3 px-2 py-4 bg-lightGray rounded-2xl hover:scale-102 transition-transform ease-in-out duration-300">
               <p className="text-xl desktop:text-3xl">
                 <EstadoAve estado={ave.estados_conservacion.nombre}></EstadoAve>
               </p>
@@ -73,18 +80,14 @@ export const AvesDetalles = () => {
           </div>
         </div>
 
-        <figure className=" w-full   desktop:mr-8 flex justify-center items-center desktop:w-[35%] hover:scale-105 transition-transform duration-500 ease-in-out  ">
-          <img className="w-full desktop:h-[350px]  object-contain " src={ave.url_img} alt={ave.nombre_comun} />
-        </figure>
-      </section>
-
-      <section className="flex flex-col desktop:flex-row justify-between items-center gap-5 w-screen bg-gradient-to-r from-lightGray  to-darkGreen p-4  ">
-        <p className=" w-full desktop:w-[20%] font-nunito font-bold text-3xl p-2  text-lightGray bg-ocean rounded-2xl  ">
-          Descripcion:
-        </p>
-        <p className=" w-full desktop:w-[80%] font-nunito font-bold p-2 text-lightGray bg-ocean rounded-2xl ">
-          {ave.descripcion}
-        </p>
+        <div className=" w-full desktop:w-[40%] flex flex-col justify-start items-center gap-6  p-3">
+          <p className=" w-full  font-nunito font-bold text-3xl p-2  text-lightGray text-center bg-ocean rounded-2xl  ">
+            Descripcion
+          </p>
+          <p className=" w-full  font-nunito font-bold p-2 text-lightGray text-2xl bg-ocean rounded-2xl ">
+            {ave.descripcion}
+          </p>
+        </div>
       </section>
 
       <section className="w-screen flex flex-col justify-center items-center  bg-gradient-to-r  from-lightGray  to-darkGreen p-4 ">
@@ -92,7 +95,6 @@ export const AvesDetalles = () => {
           MAPA DE DISTRIBUCION
         </h1>
         <div className=" w-full  desktop:w-[70%] flex justify-center items-center ">
-          {/* Usa el nuevo componente de mapa */}
           <AvesMapa conteoAvistamientos={conteoAvistamientos} />
         </div>
       </section>

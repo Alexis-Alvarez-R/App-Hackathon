@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 
 interface Props {
   links: string[];
+  onLinkClick?: () => void;
 }
-export const NavLinks = ({ links }: Props) => {
+export const NavLinks = ({ links, onLinkClick }: Props) => {
   const handleScrollToBottom = () => {
     window.scrollTo({
       top: document.body.scrollHeight,
@@ -31,6 +32,7 @@ export const NavLinks = ({ links }: Props) => {
               key={index}
               to={"/"}
               className=" text-md  hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito"
+              onClick={onLinkClick}
             >
               {link}
             </Link>
@@ -41,6 +43,7 @@ export const NavLinks = ({ links }: Props) => {
               key={index}
               to={link}
               className=" text-md  hover:text-lightGreen hover:underline block px-3 py-2 transition-colors font-nunito"
+              onClick={onLinkClick}
             >
               {link}
             </Link>

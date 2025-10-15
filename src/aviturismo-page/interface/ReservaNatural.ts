@@ -5,6 +5,7 @@ export interface ReservaNatural {
 
 export interface ReservasNaturales {
   nombre: string;
+  descripcion: string;
   latitud: number;
   url_img: string;
   longitud: number;

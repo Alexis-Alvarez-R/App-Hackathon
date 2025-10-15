@@ -30,12 +30,13 @@ export const MenuDesplegable = ({ links }: Props) => {
           isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0 pointer-events-none"
         }`}
       >
-        <NavLinks links={links} />
+        <NavLinks links={links} onLinkClick={closeMenu} />
 
         {sesion ? (
           <Link
             to={"/Perfil"}
             className="   text-white text-center font-nunitomr-10 bg-green-800 p-2  rounded-full hover:bg-green-700 active:scale-98  transition-transform "
+            onClick={closeMenu}
           >
             perfil
           </Link>
@@ -43,6 +44,7 @@ export const MenuDesplegable = ({ links }: Props) => {
           <Link
             to={"/Inicio-sesion"}
             className=" text-white text-center font-nunito mr-10 bg-green-800 p-2 rounded-full hover:bg-green-700 active:scale-98  transition-transform "
+            onClick={closeMenu}
           >
             Inicie sesion
           </Link>
