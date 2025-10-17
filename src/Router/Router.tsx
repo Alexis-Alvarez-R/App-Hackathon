@@ -39,7 +39,7 @@ export default function Router() {
         <Route path="/Detallelugar/:lugar" element={<DetalleLugar />} />
         <Route index element={<Navigate to="/Inicio"></Navigate>}></Route>{" "}
         <Route path="/Perfil" element={<Perfil />} />
-        <Route path="/Explora" element={<Explora />} />
+        <Route path="/Rumbos" element={<Explora />} />
         {/*fixed el not found*/}
         <Route path="/404" element={<NotFound />}></Route>
         <Route path="*" element={<Navigate to={"/404"}></Navigate>} />

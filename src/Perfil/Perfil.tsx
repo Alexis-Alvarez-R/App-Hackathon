@@ -4,6 +4,7 @@ import Favoritos from "./Components/Favoritos";
 import Recomendaciones from "./Components/Recomendaciones";
 import EditarPefil from "./Components/EditarPerfil";
 import LogrosMedallas from "./Components/LogrosMedallas";
+import CerrarSesion from "./Components/CerrarSesion";
 
 export default function Perfil() {
   const { sesion } = useSesionContex();
@@ -26,6 +27,7 @@ export default function Perfil() {
         <Favoritos />
         <Recomendaciones />
         <EditarPefil name={name} />
+        <CerrarSesion />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import { MenuDesplegable } from "./MenuDesplegable";
 import logo from "../../assets/img/rumboNica-logo-letra.png";
 import perfil from "../../assets/icons/perfil.png";
 
-const links = ["Inicio", "Explora", "Juegos", "Contacto"];
+const links = ["Inicio", "Rumbos", "Juegos", "Contacto"];
 
 export const HeaderHome = () => {
   obtenerAve();

@@ -38,7 +38,7 @@ export default function DescubreIA() {
 
   return (
     <div className="w-full bg-[#e2e2e2] flex flex-col gap-2 p-4 rounded-2xl [box-shadow:1px_1px_2px_1px_black] desktop:flex-row desktop:gap-4">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 w-[60%]">
         <div>
           <h1 className="p-2 font-nunito text-[18px] font-semibold tablet:text-2xl">
             Descubre con IA
@@ -70,7 +70,7 @@ export default function DescubreIA() {
             descripcion={tarjeta?.descripcion}
           ></TarjetaLugar>
         ) : (
-          <div className="w-full h-full bg-gray-700 rounded-2xl"></div>
+          <div className="w-full h-full bg-gray-300 rounded-2xl"></div>
         )}
       </div>
     </div>
