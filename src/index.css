@@ -245,3 +245,7 @@ details[open] summary {
 #vistaRef {
   transform: translateX(0px);
 }
+
+* {
+  border: solid red 1px;
+}

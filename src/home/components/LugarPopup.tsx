@@ -1,6 +1,6 @@
 import { Popup } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
-import { type Lugar } from "../interfaces/Lugar";
+import { type Lugar } from "../../Explora/interfaces/Lugar";
 
 interface propLugar {
   lugar: Lugar;

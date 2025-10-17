@@ -12,6 +12,7 @@ import { FooterHome } from "../home/components/FooterHome";
 import DetalleLugar from "../home/DetalleLugar/DetalleLugar";
 import { NotFound } from "./components/NotFound";
 import { PalabrasGame } from "../Juegos/Components/PalabrasGame";
+import Explora from "../Explora/Explora";
 
 export default function Router() {
   const ruta = useLocation();
@@ -38,6 +39,7 @@ export default function Router() {
         <Route path="/Detallelugar/:lugar" element={<DetalleLugar />} />
         <Route index element={<Navigate to="/Inicio"></Navigate>}></Route>{" "}
         <Route path="/Perfil" element={<Perfil />} />
+        <Route path="/Explora" element={<Explora />} />
         {/*fixed el not found*/}
         <Route path="/404" element={<NotFound />}></Route>
         <Route path="*" element={<Navigate to={"/404"}></Navigate>} />

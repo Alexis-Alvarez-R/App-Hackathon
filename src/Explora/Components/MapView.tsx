@@ -12,12 +12,11 @@
 
 import { Map } from "leaflet";
 import { MapContainer, TileLayer } from "react-leaflet";
-import useLugares from "../hooks/useLugares";
 import LugarMarker from "./LugarMaker";
+import { useLugaresContext } from "../../Context/LugaresContext";
 
 export default function MapView() {
-  const lugares = useLugares();
-
+  const lugares = useLugaresContext();
   function centerMarker(position: { lat: number; lng: number }, fnMap: Map) {
     fnMap.flyTo({ lat: position.lat, lng: position.lng });
   }

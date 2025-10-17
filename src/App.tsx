@@ -1,6 +1,7 @@
 import AppRouter from "./Router/AppRouter";
 import "leaflet/dist/leaflet.css";
 import { SesionProvider } from "./Context/AuthContex";
+import { LugaresProvider } from "./Context/LugaresContext";
 
 import Intro from "./home/Intro/Intro";
 import { useEffect, useState } from "react";
@@ -24,7 +25,9 @@ export const App = () => {
   return (
     <>
       <SesionProvider>
-        <AppRouter />
+        <LugaresProvider>
+          <AppRouter />
+        </LugaresProvider>
       </SesionProvider>
     </>
   );

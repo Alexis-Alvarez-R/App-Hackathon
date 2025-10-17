@@ -1,7 +1,7 @@
 import L from "leaflet";
 import { Marker, useMap } from "react-leaflet";
 import { type Lugar } from "../interfaces/Lugar";
-import LugarPopup from "./LugarPopup";
+import LugarPopup from "../../home/components/LugarPopup";
 import { type MarkerHouseProp } from "../interfaces/MarkerHouse.types";
 import tipoMarker from "../utils/tipoMarker";
 import markerShadow from "../../assets/icons/marker-shadow.png";
@@ -15,10 +15,9 @@ export default function LugarMarker({ lugar, MarkerProp }: prop) {
   const redIcon = new L.Icon({
     iconUrl: tipoMarker(lugar.tipo_id),
     shadowUrl: markerShadow,
-    iconSize: [25, 41],
+    iconSize: [35, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowSize: [41, 41],
   });
 
   const { selectMarker } = MarkerProp;
