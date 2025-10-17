@@ -23,7 +23,7 @@ export const ReservasCard = ({ reserva }: Props) => {
             alt={reserva.reservas_naturales.nombre}
           />
         </div>
-        <h2 className="w-full text-center p-2 rounded-2xl  text-[20px] bg-beige font-bold font-nunito capitalize">
+        <h2 className="w-full text-center p-2 rounded-2xl  text-[20px] bg-regularGreen font-bold font-nunito capitalize">
           {reserva.reservas_naturales.nombre}
         </h2>
       </div>
@@ -36,7 +36,7 @@ export const ReservasCard = ({ reserva }: Props) => {
         >
           <div
             onClick={(e) => e.stopPropagation()} // Evita cerrar al hacer click dentro
-            className="bg-white rounded-2xl p-6 w-full desktop:w-[70%] shadow-lg"
+            className="bg-beige rounded-2xl p-6 w-full desktop:w-[70%] shadow-lg"
           >
             <h2 className="text-2xl font-bold font-nunito mb-2">{reserva.reservas_naturales.nombre}</h2>
             <p className="text-gray-600 mb-4 font-nunito text-sm">{reserva.reservas_naturales.descripcion}</p>

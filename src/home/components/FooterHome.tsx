@@ -21,7 +21,7 @@ export const FooterHome = () => {
     <>
       <footer className="w-full flex-col  bg-black flex desktop:flex-row gap-4 p-2 text-white ">
         <section className=" w-full py-2 px-4 desktop:ml-8 mt-2 mb-4 flex justify-center flex-col gap-6 desktop:w-[50%] ">
-          <img className="w-[70%] h-[150px] object-cover" src={logo}></img>
+          <img className="w-[70%] h-[180px] object-cover" src={logo}></img>
 
           <p className="w-full deskto:w-[70%] font-nunito text-justify">
             Somos una plataforma digital que inspira a descubrir la cultura y naturaleza de Nicaragua. A través de

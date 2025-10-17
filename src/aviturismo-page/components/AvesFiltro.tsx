@@ -12,11 +12,7 @@ interface Props {
 export const AvesFiltro = ({ filtros, onFiltroClick }: Props) => {
   return (
     <>
-      <h1 className="w-screen h-[90px] text-center text-5xl font-nunito font-bold p-2 bg-gradient-to-r from-darkGreen  to-lightGreen bg-clip-text text-transparent">
-        Filtra por zona
-      </h1>
-
-      <div className="flex  flex-wrap justify-center gap-3.5 p-4  w-screen  bg-gradient-to-r from-darkGreen  via-beige to-darkGreen">
+      <div className="flex  flex-wrap justify-center gap-3.5 p-4  w-screen  bg-regularGreen">
         {filtros.map((filtro) => (
           <button
             key={filtro.id}

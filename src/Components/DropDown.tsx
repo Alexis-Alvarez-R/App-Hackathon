@@ -42,7 +42,7 @@ export const Dropdown = ({ title, items, onItemClick, onClickClose }: DropdownPr
 
       {isOpen && (
         <div
-          className={`absolute mt-2 text-white font-nunito bg-darkGreen shadow-lg rounded z-20 flex flex-col transition-all duration-200`}
+          className={`absolute mt-2 text-white font-nunito bg-lightGreen shadow-lg rounded z-20 flex flex-col transition-all duration-200`}
         >
           {items.map((item) => (
             <Link
@@ -53,7 +53,7 @@ export const Dropdown = ({ title, items, onItemClick, onClickClose }: DropdownPr
                 onItemClick?.();
                 onClickClose?.();
               }}
-              className="px-4 py-3 font-nunito hover:bg-gray-100 hover:text-darkGreen transition border-b last:border-b-0"
+              className="px-4 py-3 font-nunito hover:bg-gray-100 hover:text-lightGreen transition border-b last:border-b-0"
             >
               {item.label}
             </Link>

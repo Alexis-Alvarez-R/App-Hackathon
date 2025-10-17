@@ -20,11 +20,11 @@ const AvesMapa: React.FC<Props> = ({ conteoAvistamientos }) => {
 
     // Define tu escala de colores para el mapa.
     // Los valores y los colores deben ajustarse a tus datos reales.
-    if (conteo > 40) return "#4f004f";
-    if (conteo > 30) return "#800080";
-    if (conteo > 20) return "#be29ec";
-    if (conteo > 10) return "#da70d6";
-    return "#E0BBE4"; // Color base para los departamentos con pocos avistamientos
+    if (conteo > 40) return "#f27400";
+    if (conteo > 30) return "#f27400";
+    if (conteo > 20) return "#f27400";
+    if (conteo > 10) return "#f27400";
+    return "#f27400"; // Color base para los departamentos con pocos avistamientos
   };
 
   // Esta función se llama por cada "feature" (departamento) en el GeoJSON

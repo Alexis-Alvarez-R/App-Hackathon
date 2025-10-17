@@ -3,7 +3,7 @@ import { useRef, type ReactNode } from "react";
 import Input from "./Components/Input";
 import useEnviarForm from "./hooks/useEnviarForm";
 import Notification from "./Components/Notificacion";
-import letra from "../assets/img/letra.png";
+import letra from "../assets/img/rumboNica-logo-letra.png";
 import pefil from "../assets/icons/perfil2.png";
 
 import user from "../assets/icons/user.png";
@@ -20,13 +20,7 @@ interface props {
   accionquery: typeActionQuery;
 }
 
-export default function Auth({
-  textBtn,
-  inputNombre,
-  endpoint,
-  children,
-  accionquery,
-}: props) {
+export default function Auth({ textBtn, inputNombre, endpoint, children, accionquery }: props) {
   const refForm = useRef<HTMLFormElement>(null);
   const { enviar, notification, setNotification } = useEnviarForm(endpoint);
   console.log(notification);
@@ -36,34 +30,13 @@ export default function Auth({
       <div className="p-6 pt-0 flex flex-col gap-4 justify-center items-start h-full tablet:items-center desktop:items-start desktop:p-10 desktop:pl-[10%]  desktop:flex-row">
         <div className="order-2 flex flex-col gap-2.5 bg-[#ebebeb7a] w-full rounded-3xl p-4 pt-[10px] [border:solid_black_1px] tablet:w-[65%] desktop:order-1 desktop:w-[30%]">
           <figure className="w-full h-[100px] flex justify-center items-center">
-            <img
-              src={pefil}
-              alt=""
-              className="h-full rounded-full p-2 border-regularGreen border-4"
-            />
+            <img src={pefil} alt="" className="h-full rounded-full p-2 border-regularGreen border-4" />
           </figure>
 
           <form className="w-full flex flex-col gap-4" ref={refForm}>
-            {inputNombre && (
-              <Input
-                type="text"
-                name="nombre"
-                placeholder="Nombre usuario"
-                icon={user}
-              />
-            )}
-            <Input
-              type="email"
-              name="email"
-              placeholder="Email"
-              icon={correo}
-            />
-            <Input
-              type="password"
-              name="password"
-              placeholder="Contraseña"
-              icon={candado}
-            />
+            {inputNombre && <Input type="text" name="nombre" placeholder="Nombre usuario" icon={user} />}
+            <Input type="email" name="email" placeholder="Email" icon={correo} />
+            <Input type="password" name="password" placeholder="Contraseña" icon={candado} />
             <button
               type="button"
               onClick={(event) => enviar(event, refForm.current, accionquery)}
@@ -73,10 +46,7 @@ export default function Auth({
             </button>
           </form>
 
-          <ButtonGoogle
-            accionquery={accionquery}
-            setNotification={setNotification}
-          />
+          <ButtonGoogle accionquery={accionquery} setNotification={setNotification} />
 
           {children}
         </div>
