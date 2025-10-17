@@ -12,7 +12,7 @@ export default function Home() {
           alt="Rumbo Nica"
         />
       </figure>
-      <div className="w-full p-4 tablet:px-24">
+      <div className="w-full p-4 tablet:px-38 desktop:px-48">
         <DescubreIA />
       </div>
     </div>
