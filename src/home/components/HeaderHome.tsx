@@ -4,7 +4,7 @@ import { NavLinks } from "./NavLinks";
 import { useSesionContex } from "../../Context/AuthContex";
 
 import { MenuDesplegable } from "./MenuDesplegable";
-import logo from "../../assets/img/logo-letra.png";
+import logo from "../../assets/img/rumboNica-logo-letra.png";
 import perfil from "../../assets/icons/perfil.png";
 
 const links = ["Inicio", "Explora", "Juegos", "Contacto"];
@@ -19,8 +19,8 @@ export const HeaderHome = () => {
 
   return (
     <header className="relative z-50 w-full flex justify-between gap-4  bg-black text-white p-3 ">
-      <Link to={"/"} className="flex justify-start items-center w-[20%]">
-        <img src={logo} className="w-full h-[50px] object-contain "></img>
+      <Link to={"/"} className="flex justify-start items-center w-[40%]">
+        <img src={logo} className="w-[100px]  h-[50px] object-cover "></img>
       </Link>
       <nav className="hidden desktop:flex justify-center items-center gap-2   px-5 py-2 w-[50%] ">
         <NavLinks links={links}></NavLinks>
@@ -30,14 +30,14 @@ export const HeaderHome = () => {
       {sesion ? (
         <Link
           to={"/Perfil"}
-          className="w-[5%] hidden desktop:block mr-10 bg-green-800 p-1 rounded-full hover:bg-green-700 active:scale-98  transition-transform overflow-hidden"
+          className="w-[5%] hidden desktop:block mr-1 p-1 rounded-full bg-lightGreen text-white font-bold font-nunito active:scale-98  transition-transform overflow-hidden"
         >
           <img src={picture} alt="" className="w-full rounded-full" />
         </Link>
       ) : (
         <Link
           to={"/Inicio-sesion"}
-          className=" hidden desktop:flex items-center mr-10  bg-green-800 px-4 rounded-full hover:bg-green-700 active:scale-98  transition-transform"
+          className=" hidden desktop:flex items-center mr-10  font-nunito font-bold px-4 rounded-full bg-lightGreen text-white active:scale-98  transition-transform "
         >
           Inicie sesion
         </Link>

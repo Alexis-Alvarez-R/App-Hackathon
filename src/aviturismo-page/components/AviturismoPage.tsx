@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import { useAve } from "../hooks/useAve";
 import { AvesFiltro } from "./AvesFiltro";
 import { AvesGrid } from "./AvesGrid";
+import { Carrucel } from "../../Components/Carrucel";
 
 const preloadCard = 10;
 
@@ -52,7 +53,23 @@ export const AviturismoPage = () => {
   const showLoadMoreButton = visibleAves.length > 0 && cardsToShow < aves.length;
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center bg-gradient-to-r from-darkGreen via-beige to-darkGreen">
+      <div className="w-full flex flex-col gap-6 desktop:flex-row  justify-between items-center py-4 px-6 ">
+        <p className="font-nunito font-bold w-full text-md  desktop:w-[50%] desktop:text-3xl">
+          ¿Estás listo para la aventura? El aviturismo es más que una actividad, es una inmersión profunda en la
+          naturaleza salvaje. En <span className="text-white">Rumbo Nica</span>, te llevamos a los mejores hotspots para
+          observar especies raras y migratorias. Prepara tus binoculares, la biodiversidad te espera.
+        </p>
+        <Carrucel></Carrucel>
+      </div>
+
+      <div className="w-full  flex flex-col justify-center items-center py-4">
+        <h2 className="w-screen h-[90px] text-center text-5xl font-nunito font-bold p-2 bg-gradient-to-r from-darkGreen  to-lightGreen bg-clip-text text-transparent">
+          Biblioteca de Aves
+        </h2>
+        <p className="text-[100px]">&#8681;</p>
+      </div>
+
       <AvesFiltro filtros={filtros} onFiltroClick={handleFiltroClick}></AvesFiltro>
 
       {isLoading ? (

@@ -9,11 +9,11 @@ interface DropdownItem {
 interface DropdownProps {
   title: string;
   items: DropdownItem[];
-  mobile?: boolean; // si es mobile, ocupamos más espacio
   onItemClick?: () => void;
+  onClickClose?: () => void;
 }
 
-export const Dropdown = ({ title, items, mobile = false, onItemClick }: DropdownProps) => {
+export const Dropdown = ({ title, items, onItemClick, onClickClose }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +34,7 @@ export const Dropdown = ({ title, items, mobile = false, onItemClick }: Dropdown
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="px-4 py-2 rounded hover:text-lightGreen hover:underline transition w-full flex justify-between items-center"
+        className="px-4 py-2 rounded font-nunito hover:text-lightGreen hover:underline transition w-full flex justify-between items-center"
       >
         {title}
         <span className={`ml-2 transform transition-transform ${isOpen ? "rotate-180" : ""}`}>▼</span>
@@ -42,9 +42,7 @@ export const Dropdown = ({ title, items, mobile = false, onItemClick }: Dropdown
 
       {isOpen && (
         <div
-          className={`absolute mt-2 text-white bg-darkGreen shadow-lg rounded z-20 flex flex-col ${
-            mobile ? "w-full left-0 right-0" : "right-0 w-48"
-          } transition-all duration-200`}
+          className={`absolute mt-2 text-white font-nunito bg-darkGreen shadow-lg rounded z-20 flex flex-col transition-all duration-200`}
         >
           {items.map((item) => (
             <Link
@@ -53,8 +51,9 @@ export const Dropdown = ({ title, items, mobile = false, onItemClick }: Dropdown
               onClick={() => {
                 closeDropdown();
                 onItemClick?.();
+                onClickClose?.();
               }}
-              className="px-4 py-3 hover:bg-gray-100 hover:text-darkGreen transition border-b last:border-b-0"
+              className="px-4 py-3 font-nunito hover:bg-gray-100 hover:text-darkGreen transition border-b last:border-b-0"
             >
               {item.label}
             </Link>

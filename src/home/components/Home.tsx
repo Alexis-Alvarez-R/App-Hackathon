@@ -1,14 +1,14 @@
-import banner from "../../assets/img/banner.webp";
 import Busqueda from "./Busqueda";
 import DescubreIA from "./DescubreIA";
 
 export default function Home() {
   return (
     <div className="w-full flex flex-col mt-[-16px] gap-0">
-      <figure className=" overflow-hidden tablet: desktop:h-[80vh]">
+      <figure className=" relative overflow-hidden tablet: desktop:h-[80vh]">
+        <div className=" absolute inset-0 bg-gradient-to-r from-lightGreen/30 to-amarillo/30 "></div>
         <img
           className="w-full h-full object-cover"
-          src={banner}
+          src="https://fydjtuqzsqyjucwyamdx.supabase.co/storage/v1/object/public/aves-img/mainImg.png"
           alt="Rumbo Nica"
         />
       </figure>

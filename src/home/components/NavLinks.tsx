@@ -58,7 +58,7 @@ export const NavLinks = ({ links, onLinkClick }: Props) => {
           );
         }
       })}
-      <Dropdown title="Vive" items={categorias}></Dropdown>
+      <Dropdown title="Vive" items={categorias} onClickClose={onLinkClick}></Dropdown>
     </>
   );
 };

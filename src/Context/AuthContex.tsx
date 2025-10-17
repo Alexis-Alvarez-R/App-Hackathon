@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  type JSX,
-} from "react";
+import { createContext, useContext, useEffect, useState, type JSX } from "react";
 import { type Sesion, type SesionContextType } from "../Auth/interface/iAuth";
 import { turismoAPiFecth } from "../apis/turismo.api";
 
@@ -35,7 +29,7 @@ export function SesionProvider({ children }: prop) {
           console.log(data);
           return;
         }
-        setSesion(undefined);
+        console.log(`Esta es la sesion`);
         console.log(sesion);
       } catch (error) {
         setSesion(undefined);
@@ -44,11 +38,7 @@ export function SesionProvider({ children }: prop) {
     verificarSesion();
   }, []);
 
-  return (
-    <SesionContext.Provider value={{ sesion, setSesion }}>
-      {children}
-    </SesionContext.Provider>
-  );
+  return <SesionContext.Provider value={{ sesion, setSesion }}>{children}</SesionContext.Provider>;
 }
 
 export function useSesionContex() {
