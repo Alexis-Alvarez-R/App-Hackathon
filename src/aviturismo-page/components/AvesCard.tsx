@@ -17,12 +17,12 @@ export const AvesCard = ({ ave }: Props) => {
           alt={ave.nombre_comun}
         />
       </div>
-      <h2 className="w-full text-center p-2 rounded-2xl  text-[20px] bg-beige font-bold font-nunito">
+      <h2 className="w-full text-center p-2 rounded-2xl  text-[20px] bg-white font-bold font-nunito">
         {ave.nombre_comun}
       </h2>
 
       <div className="flex justify-between items-center gap-3 w-full">
-        <p className="  px-2 py-3 rounded-2xl bg-beige font-nunito font-bold w-[80%] ">
+        <p className="  px-2 py-3 rounded-2xl bg-white font-nunito font-bold w-[80%] ">
           {" "}
           Estado: <EstadoAve estado={ave.estados_conservacion.nombre}></EstadoAve>
         </p>
@@ -30,7 +30,7 @@ export const AvesCard = ({ ave }: Props) => {
         <Link
           to={"/Aves-Detalles"}
           state={ave}
-          className=" px-2 py-3  rounded-2xl bg-darkGreen font-nunito font-bold w-[20%] desktop:w-[30%] text-center text-beige hover:bg-beige hover:text-darkGreen transition-colors"
+          className=" px-2 py-3  rounded-2xl bg-black font-nunito font-bold w-[20%] desktop:w-[30%] text-center text-white hover:bg-white hover:text-black transition-colors"
         >
           +INFO
         </Link>
