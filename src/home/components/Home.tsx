@@ -8,7 +8,7 @@ export default function Home() {
         <div className=" absolute inset-0 bg-gradient-to-r from-lightGreen/30 to-amarillo/30 "></div>
         <img
           className="w-full h-full object-cover"
-          src="https://fydjtuqzsqyjucwyamdx.supabase.co/storage/v1/object/public/aves-img/mainImg.png"
+          src="https://kozarxgvjnsdtpmauqik.supabase.co/storage/v1/object/public/aves-img/img-main-RN.png"
           alt="Rumbo Nica"
         />
       </figure>

@@ -8,8 +8,8 @@ interface Props {
 
 const categorias = [
   { label: "Aviturismo", link: "/aviturismo" },
-  { label: "AguaTurismo", link: "/notfound" },
-  { label: "FuegoTurismo", link: "/notfound" },
+  { label: "Ecoturismo", link: "/notfound" },
+  { label: "Insecturismo", link: "/notfound" },
 ];
 
 export const NavLinks = ({ links, onLinkClick }: Props) => {
@@ -58,7 +58,7 @@ export const NavLinks = ({ links, onLinkClick }: Props) => {
           );
         }
       })}
-      <Dropdown title="Vive" items={categorias} onClickClose={onLinkClick}></Dropdown>
+      <Dropdown title="Explora" items={categorias} onClickClose={onLinkClick}></Dropdown>
     </>
   );
 };

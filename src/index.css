@@ -264,3 +264,20 @@ details[open] summary {
   z-index: 1;
   cursor: pointer;
 }
+
+@keyframes appear {
+  from {
+    scale: 0.4;
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.animacion-reveal {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0%;
+}

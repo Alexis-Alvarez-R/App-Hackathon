@@ -4,7 +4,7 @@ import { NavLinks } from "./NavLinks";
 import { useSesionContex } from "../../Context/AuthContex";
 
 import { MenuDesplegable } from "./MenuDesplegable";
-import logo from "../../assets/img/rumboNica-logo-letra.png";
+import logo from "../../assets/img/LogoRumboNica.svg";
 import perfil from "../../assets/icons/perfil.png";
 
 const links = ["Inicio", "Rumbos", "Juegos", "Contacto"];

@@ -20,7 +20,7 @@ export default function Localidades({ idlugar, setVistaGuias }: props) {
   return (
     <div
       id="main-tarjetas"
-      className="relative w-full h-full [box-shadow:1px_2px_3px_1px_black] rounded-2xl tablet:p-3"
+      className="relative w-full h-full [box-shadow:1px_2px_3px_1px_black] rounded-2xl tablet:p-3 "
     >
       <div className="w-[100%] flex justify-between px-2 desktop:px-6">
         <div className="hidden tablet:flex tablet:w-[20%]">
@@ -32,9 +32,7 @@ export default function Localidades({ idlugar, setVistaGuias }: props) {
           </h1>
         </div>
         <div onClick={toogleVistaGuias} className="w-max flex items-center">
-          <h1 className="pl-4 flex w-[70%] items-center font-nunito text-[12px]">
-            Guias
-          </h1>
+          <h1 className="pl-4 flex w-[70%] items-center font-nunito text-[12px]">Guias</h1>
           <div className="w-[30px] h-[30px] flex justify-center items-center font-bold">
             <img src={flecha} alt="" className="h-full" />
           </div>
@@ -44,25 +42,17 @@ export default function Localidades({ idlugar, setVistaGuias }: props) {
         {comercios.length == 0 ? (
           <h1>No hay</h1>
         ) : (
-          comercios.map(
-            ({
-              imgurl,
-              nombre,
-              descripcion,
-              producto_descripcion,
-              id_comercio,
-            }) => {
-              return (
-                <TarjetaLocalidad
-                  key={id_comercio}
-                  imgurl={imgurl}
-                  nombre={nombre}
-                  descripcion={descripcion}
-                  producto_descripcion={producto_descripcion}
-                />
-              );
-            }
-          )
+          comercios.map(({ imgurl, nombre, descripcion, producto_descripcion, id_comercio }) => {
+            return (
+              <TarjetaLocalidad
+                key={id_comercio}
+                imgurl={imgurl}
+                nombre={nombre}
+                descripcion={descripcion}
+                producto_descripcion={producto_descripcion}
+              />
+            );
+          })
         )}
       </div>
     </div>

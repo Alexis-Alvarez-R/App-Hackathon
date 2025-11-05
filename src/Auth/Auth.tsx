@@ -3,7 +3,7 @@ import { useRef, type ReactNode } from "react";
 import Input from "./Components/Input";
 import useEnviarForm from "./hooks/useEnviarForm";
 import Notification from "./Components/Notificacion";
-import letra from "../assets/img/rumboNica-logo-letra.png";
+import letra from "../assets/img/logo-letra.png";
 import pefil from "../assets/icons/perfil2.png";
 
 import user from "../assets/icons/user.png";

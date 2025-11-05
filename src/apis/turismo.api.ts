@@ -4,7 +4,7 @@ const urlLocal = "http://localhost:3000/";
 const urlServer = "https://server-hackathon-991o.onrender.com/";
 
 export const turismoApi = axios.create({
-  baseURL: urlServer,
+  baseURL: urlLocal,
 });
 
-export const turismoAPiFecth = urlServer;
+export const turismoAPiFecth = urlLocal;
